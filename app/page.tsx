@@ -1,100 +1,156 @@
+"use client";
+
 import Image from "next/image";
+import poto from "./images/cargo.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import { useEffect } from "react";
+// ..
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      // once: true,
+    });
+  }, []);
+  // AOS.init();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      {/* Navbar */}
+      <nav className="bg-white py-5 shadow-lg fixed w-full z-10">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-3xl font-bold tracking-tight text-blue-600">
+            Sahabat Baru cargo
+          </h1>
+          <ul className="flex space-x-8">
+            <li>
+              <a
+                href="#"
+                className="text-gray-700 hover:text-blue-600 transition duration-300">
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-blue-600 transition duration-300">
+                Layanan
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-blue-600 transition duration-300">
+                Kontak
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Hero Section */}
+      <section className="relative flex items-center justify-center min-h-screen bg-gray-200 pt-20">
+        <Image
+          src={poto}
+          alt="Cargo Truck"
+          layout="fill"
+          objectFit="cover"
+          className="brightness-75"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-5">
+          <h2 data-aos="fade-down" className="text-5xl text-white font-extrabold">
+            Logistik Terpercaya di Indonesia
+          </h2>
+          <p data-aos="fade-down" className="text-lg text-gray-300 mt-3">
+            Kami hadir untuk memberikan solusi pengiriman terbaik bagi bisnis
+            Anda
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            data-aos="fade-down"
+            href="#services"
+            className="mt-6 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+            Lihat Layanan Kami
           </a>
         </div>
+      </section>
+
+      {/* Services Section */}
+      <main
+        id="services"
+        className="container mx-auto p-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        {/* Service 1 */}
+        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          <Image
+            src="https://source.unsplash.com/500x300/?warehouse"
+            alt="Gudang"
+            width={500}
+            height={300}
+            className="rounded-lg"
+          />
+          <h3 className="text-2xl font-bold mt-5 text-gray-800">
+            Jaringan Gudang Luas
+          </h3>
+          <p className="mt-3 text-gray-600">
+            Jaringan gudang kami tersebar di seluruh Indonesia untuk memastikan
+            pengiriman cepat dan aman.
+          </p>
+        </div>
+
+        {/* Service 2 */}
+        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          <Image
+            src="https://source.unsplash.com/500x300/?cargo,ship"
+            alt="Pengiriman Kapal"
+            width={500}
+            height={300}
+            className="rounded-lg"
+          />
+          <h3 className="text-2xl font-bold mt-5 text-gray-800">
+            Pengiriman Kapal
+          </h3>
+          <p className="mt-3 text-gray-600">
+            Pengiriman melalui laut dengan armada modern yang menjangkau wilayah
+            kepulauan di Indonesia.
+          </p>
+        </div>
+
+        {/* Service 3 */}
+        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          <Image
+            src="https://source.unsplash.com/500x300/?cargo,plane"
+            alt="Pengiriman Udara"
+            width={500}
+            height={300}
+            className="rounded-lg"
+          />
+          <h3 className="text-2xl font-bold mt-5 text-gray-800">
+            Pengiriman Udara
+          </h3>
+          <p className="mt-3 text-gray-600">
+            Pengiriman cepat dan handal melalui udara, ideal untuk barang
+            berharga dan mendesak.
+          </p>
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Call to Action */}
+      <section
+        className="bg-blue-600 text-white py-16 text-center"
+        id="contact">
+        <h2 className="text-4xl font-bold">Siap Mengirimkan Barang Anda?</h2>
+        <p className="mt-4 text-lg">
+          Hubungi kami sekarang dan dapatkan penawaran terbaik untuk bisnis
+          Anda!
+        </p>
+        <button className="mt-8 px-10 py-4 bg-yellow-400 text-blue-600 font-bold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+          Kontak Kami
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-5 bg-gray-900 text-gray-400 text-center">
+        <p>© 2024 Cargo Kami. Hak Cipta Dilindungi.</p>
       </footer>
     </div>
   );
