@@ -5,6 +5,8 @@ import poto from "./images/cargo.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect } from "react";
+import { Sidebar } from "@/components/ui/sidebar";
+
 // ..
 
 export default function Home() {
@@ -29,7 +31,10 @@ export default function Home() {
             }
             alt=""
           />
-          <ul className="flex space-x-8">
+          <div className="md:hidden">
+            <Sidebar />
+          </div>
+          <ul className="flex max-md:hidden space-x-8">
             <li>
               <a
                 href="#"
@@ -158,7 +163,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-5 bg-gray-900 text-gray-400 text-center">
-        <p>© 2024 Cargo Kami. Hak Cipta Dilindungi.</p>
+        <p>© 2024 Sahabat Baru Cargo. Hak Cipta Dilindungi.</p>
       </footer>
     </div>
   );
