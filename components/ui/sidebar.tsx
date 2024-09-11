@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/drawer";
 
 import { X } from "lucide-react";
-import Link from "next/link";
+
 // import { CollapsibleMobile } from "./CollapsibleMobile";
 
 export function Sidebar() {

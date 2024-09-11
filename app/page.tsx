@@ -10,9 +10,7 @@ import ChatWhatsapp from "@/lib/ChatWhatsapp";
 import { PhoneCall } from "lucide-react";
 // ..Pho
 
-const handleClick = () => {
-  // router.push("/contact-us")
-};
+
 
 export default function Home() {
   useEffect(() => {
