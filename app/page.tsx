@@ -18,11 +18,17 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="bg-white py-5 shadow-lg fixed w-full z-10">
+      <nav className="bg-white  shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold tracking-tight text-blue-600">
-            Sahabat Baru cargo
-          </h1>
+          <Image
+            className="object-cover size-20"
+            width={600}
+            height={400}
+            src={
+              "https://utfs.io/f/cccd5361-35ac-4f74-92bf-9775c21b59a4-5nw59t.png"
+            }
+            alt=""
+          />
           <ul className="flex space-x-8">
             <li>
               <a
@@ -59,7 +65,9 @@ export default function Home() {
           className="brightness-75"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-5">
-          <h2 data-aos="fade-down" className="text-5xl text-white font-extrabold">
+          <h2
+            data-aos="fade-down"
+            className="text-5xl text-white font-extrabold">
             Logistik Terpercaya di Indonesia
           </h2>
           <p data-aos="fade-down" className="text-lg text-gray-300 mt-3">
@@ -82,7 +90,7 @@ export default function Home() {
         {/* Service 1 */}
         <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src="https://source.unsplash.com/500x300/?warehouse"
+            src=""
             alt="Gudang"
             width={500}
             height={300}
@@ -100,7 +108,7 @@ export default function Home() {
         {/* Service 2 */}
         <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src="https://source.unsplash.com/500x300/?cargo,ship"
+            src=""
             alt="Pengiriman Kapal"
             width={500}
             height={300}
@@ -118,7 +126,7 @@ export default function Home() {
         {/* Service 3 */}
         <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src="https://source.unsplash.com/500x300/?cargo,plane"
+            src=""
             alt="Pengiriman Udara"
             width={500}
             height={300}

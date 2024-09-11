@@ -15,20 +15,22 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Sahabat Baru Cargo",
-  description: "Sahabat Baru Cargo: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang cepat, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
+  description:
+    "Sahabat Baru Cargo: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang cepat, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
   openGraph: {
-    title: "Sahabat Baru Cargo - Solusi Pengiriman Terpercaya",
-    description: "Sahabat Baru Cargo memberikan layanan pengiriman cepat, aman, dan terpercaya untuk semua kebutuhan logistik Anda di Indonesia.",
+    title: "Sahabat Baru Cargo - Solusi Logistik Anda",
+    description:
+      "Dengan Sahabat Baru Cargo, pengiriman barang Anda selalu cepat, aman, dan terpercaya. Kami adalah solusi logistik terbaik di Indonesia.",
     url: "https://sahabatbarucargo.com", // Replace with actual URL
     type: "website",
     locale: "id_ID",
     siteName: "Sahabat Baru Cargo",
     images: [
       {
-        url: "https://example.com/image.jpg", // Replace with your actual image URL
-        width: 1600,
-        height: 900,
-        alt: "Sahabat Baru Cargo - Pengiriman Barang Murah Terpercaya",
+        url: "https://utfs.io/f/cccd5361-35ac-4f74-92bf-9775c21b59a4-5nw59t.png", // Replace with your actual image URL
+        width: 800,
+        height: 600,
+        alt: "Logo Sahabat Baru Cargo - Solusi Logistik Terpercaya",
       },
     ],
   },
@@ -42,8 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
