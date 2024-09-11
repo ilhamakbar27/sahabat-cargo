@@ -6,8 +6,13 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect } from "react";
 import { Sidebar } from "@/components/ui/sidebar";
+import ChatWhatsapp from "@/lib/ChatWhatsapp";
+import { PhoneCall } from "lucide-react";
+// ..Pho
 
-// ..
+const handleClick = () => {
+  // router.push("/contact-us")
+};
 
 export default function Home() {
   useEffect(() => {
@@ -79,12 +84,26 @@ export default function Home() {
             Kami hadir untuk memberikan solusi pengiriman terbaik bagi bisnis
             Anda
           </p>
-          <a
+          <ChatWhatsapp
+            phone="+6282393933313"
+            message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
+            <button
+              data-aos="fade-down"
+              className="mt-6 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+              <div className="flex gap-4 items-center">
+                <PhoneCall className="size-5" />
+                <p className=" text-lg tracking-tight font-[800]">
+                  Dapatkan Promo Sekarang
+                </p>
+              </div>
+            </button>
+          </ChatWhatsapp>
+          {/* <a
             data-aos="fade-down"
             href="#services"
             className="mt-6 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
             Lihat Layanan Kami
-          </a>
+          </a> */}
         </div>
       </section>
 
