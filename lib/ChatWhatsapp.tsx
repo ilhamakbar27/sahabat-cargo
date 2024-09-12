@@ -3,11 +3,21 @@
 import React from "react";
 // import {mobileCheck} from './mobile-check'
 import { isMobile } from "react-device-detect";
-const ChatWhatsapp = ({ children, phone, message, ...restProps }) => {
-  // const isMobile = mobileCheck()
+
+interface ChatWhatsappProps {
+  children: React.ReactNode;
+  phone?: string;
+  message?: string;
+}
+const ChatWhatsapp = ({
+  children,
+  phone,
+  message,
+  ...restProps
+}: ChatWhatsappProps) => {
   const baseUrl = isMobile
-    ? "https://web.whatsapp.com/send"
-    : "https://api.whatsapp.com/send";
+    ? "https://api.whatsapp.com/send"
+    : "https://web.whatsapp.com/send";
 
   const queryParams = phone
     ? `?phone=${phone}${message ? `&text=${encodeURIComponent(message)}` : ""}`
