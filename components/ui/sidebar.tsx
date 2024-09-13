@@ -22,7 +22,7 @@ export function Sidebar() {
       <DrawerContent>
         <DrawerDescription className="min-h-screen   text-xl font-bold ">
           {/* <p className="mt-28">Ini Menu Sidebar</p> */}
-          <div className="flex flex-col mt-12 p-10 text-white gap-3 px-5">
+          <div className="flex flex-col mt-24 p-10 text-white gap-3 px-5">
             <Link href="/#">
               <DrawerClose>
                 <h2>Beranda</h2>
@@ -64,12 +64,12 @@ export function Sidebar() {
             )
           )}
         </div> */}
-        <DrawerClose className="mt-20 z-30" asChild>
+        <DrawerClose className="mt-32 z-30" asChild>
           <X
             color="white"
             strokeWidth={1}
             className="right-10 top-6  absolute"
-            size={50}
+            size={60}
           />
         </DrawerClose>
       </DrawerContent>
