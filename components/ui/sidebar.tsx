@@ -20,9 +20,9 @@ export function Sidebar() {
         <MenuIcon className="size-10 mx-4 font-bold" />
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerDescription className="min-h-screen  text-xl font-bold ">
+        <DrawerDescription className="min-h-screen   text-xl font-bold ">
           {/* <p className="mt-28">Ini Menu Sidebar</p> */}
-          <div className="flex flex-col p-10 text-white gap-3 px-5">
+          <div className="flex flex-col mt-12 p-10 text-white gap-3 px-5">
             <Link href="/#">
               <DrawerClose>
                 <h2>Beranda</h2>
@@ -64,11 +64,11 @@ export function Sidebar() {
             )
           )}
         </div> */}
-        <DrawerClose className="mt-5" asChild>
+        <DrawerClose className="mt-20 z-30" asChild>
           <X
             color="white"
             strokeWidth={1}
-            className="right-5 top-6    absolute"
+            className="right-10 top-6  absolute"
             size={50}
           />
         </DrawerClose>
