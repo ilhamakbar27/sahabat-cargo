@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/drawer";
 
 import { X } from "lucide-react";
+import Link from "next/link";
 
 // import { CollapsibleMobile } from "./CollapsibleMobile";
 
@@ -20,7 +21,24 @@ export function Sidebar() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerDescription className="min-h-screen  text-xl font-bold ">
-          <p className="mt-28">Ini Menu Sidebar</p>
+          {/* <p className="mt-28">Ini Menu Sidebar</p> */}
+          <div className="flex flex-col p-10 text-white gap-3 px-5">
+            <Link href="/#">
+              <DrawerClose>
+                <h2>Beranda</h2>
+              </DrawerClose>
+            </Link>
+            <Link href="/#services">
+              <DrawerClose>
+                <h2>Layanan</h2>
+              </DrawerClose>
+            </Link>
+            <Link href="/#contact">
+              <DrawerClose>
+                <h2>Kontak</h2>
+              </DrawerClose>
+            </Link>
+          </div>
         </DrawerDescription>
         {/* <div className="flex flex-col font-semibold p-5 pt-10 gap-3">
           {MobileMenu.map((item) =>
@@ -46,7 +64,7 @@ export function Sidebar() {
             )
           )}
         </div> */}
-        <DrawerClose asChild>
+        <DrawerClose className="mt-5" asChild>
           <X
             color="white"
             strokeWidth={1}

@@ -8,9 +8,8 @@ import { useEffect } from "react";
 import { Sidebar } from "@/components/ui/sidebar";
 import ChatWhatsapp from "@/lib/ChatWhatsapp";
 import { PhoneCall } from "lucide-react";
+import Footer from "@/components/footer";
 // ..Pho
-
-
 
 export default function Home() {
   useEffect(() => {
@@ -96,12 +95,6 @@ export default function Home() {
               </div>
             </button>
           </ChatWhatsapp>
-          {/* <a
-            data-aos="fade-down"
-            href="#services"
-            className="mt-6 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
-            Lihat Layanan Kami
-          </a> */}
         </div>
       </section>
 
@@ -110,7 +103,9 @@ export default function Home() {
         id="services"
         className="container mx-auto p-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
         {/* Service 1 */}
-        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+        <div
+          data-aos="fade-down"
+          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
             src=""
             alt="Gudang"
@@ -128,7 +123,9 @@ export default function Home() {
         </div>
 
         {/* Service 2 */}
-        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+        <div
+          data-aos="fade-down"
+          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
             src=""
             alt="Pengiriman Kapal"
@@ -144,9 +141,10 @@ export default function Home() {
             kepulauan di Indonesia.
           </p>
         </div>
-
         {/* Service 3 */}
-        <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+        <div
+          data-aos="fade-down"
+          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
             src=""
             alt="Pengiriman Udara"
@@ -179,9 +177,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-5 bg-gray-900 text-gray-400 text-center">
-        <p>© 2024 Sahabat Baru Cargo. Hak Cipta Dilindungi.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

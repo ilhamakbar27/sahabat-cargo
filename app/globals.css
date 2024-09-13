@@ -7,6 +7,10 @@
   --foreground: #171717;
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
@@ -88,5 +92,12 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-4xl tracking-tight font-bold;
+  }
+
+  h2 {
+    @apply text-3xl tracking-tight font-semibold;
   }
 }
