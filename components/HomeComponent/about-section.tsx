@@ -64,8 +64,8 @@ const AboutSection = () => {
                     <div
                       key={data.id}
                       data-aos="fade-down"
-                      className="w-full h-full p-4 tracking-tight rounded-xl border border-gray-200 bg-[#FED65F] hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9">
+                      className="w-full max-md:max-h-[100px] h-full p-4 tracking-tight rounded-xl border border-gray-200 bg-[#FED65F] hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                      <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-snug">
                         {data?.title}
                       </h4>
                       <p className="text-gray-800  font-[500] text-base  leading-tight">
