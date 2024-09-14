@@ -102,8 +102,9 @@ export default function Home() {
           </ChatWhatsapp>
         </div>
       </section>
-
-      <AboutSection />
+      <div className="min-h-screen max-md:mb-20">
+        <AboutSection />
+      </div>
       {/* Services Section */}
       <main
         id="services"
