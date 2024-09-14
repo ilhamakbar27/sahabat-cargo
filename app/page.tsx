@@ -13,6 +13,7 @@ import warehouse from "./images/warehouse.png";
 import ship from "./images/ship.png";
 import time from "./images/time.png";
 import bgship from "./images/ship-bg.jpg";
+import AboutSection from "@/components/HomeComponent/about-section";
 // ..Pho
 
 export default function Home() {
@@ -102,6 +103,7 @@ export default function Home() {
         </div>
       </section>
 
+      <AboutSection />
       {/* Services Section */}
       <main
         id="services"
