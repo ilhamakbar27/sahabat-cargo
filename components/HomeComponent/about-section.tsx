@@ -82,7 +82,7 @@ const AboutSection = () => {
               </span>
             </button>
           </div>
-          <div className="w-full lg:justify-start max-md:mt-20 justify-center items-start flex">
+          <div className="w-full lg:justify-start max-md:mt-40 justify-center items-start flex">
             <div
               data-aos="fade-down"
               className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
