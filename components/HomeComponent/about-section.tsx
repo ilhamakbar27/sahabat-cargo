@@ -33,7 +33,7 @@ const dataAboutSection: AboutSectionProps[] = [
 
 const AboutSection = () => {
   return (
-    <section className="py-20 max-md:py-10 relative xl:mr-0 lg:mr-5 mr-0">
+    <section className="py-20 max-md:py-10 max-md:h-[1200px] relative xl:mr-0 lg:mr-5 mr-0">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
           <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
@@ -64,7 +64,7 @@ const AboutSection = () => {
                     <div
                       key={data.id}
                       data-aos="fade-down"
-                      className="w-full max-md:max-h-[100px] h-full p-4 tracking-tight rounded-xl border border-gray-200 bg-[#FED65F] hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                      className="w-full  h-full p-4 tracking-tight rounded-xl border border-gray-200 bg-[#FED65F] hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
                       <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-snug">
                         {data?.title}
                       </h4>
