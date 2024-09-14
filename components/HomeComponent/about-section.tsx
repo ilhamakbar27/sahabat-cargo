@@ -1,6 +1,6 @@
 import React from "react";
-import bgship from "@/app/images/ship-bg.jpg";
-import Image from "next/image";
+// import bgship from "@/app/images/ship-bg.jpg";
+// import Image from "next/image";
 
 const AboutSection = () => {
   return (
