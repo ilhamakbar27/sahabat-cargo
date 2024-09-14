@@ -19,7 +19,7 @@ const AboutSection = () => {
                 </h2>
                 <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                   Our achievement story is a testament to teamwork and
-                  perseverance. Together, we've overcome challenges, celebrated
+                  perseverance. Together, we have overcome challenges, celebrated
                   victories, and created a narrative of progress and success.
                 </p>
               </div>
