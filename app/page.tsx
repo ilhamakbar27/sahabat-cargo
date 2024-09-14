@@ -175,7 +175,8 @@ export default function Home() {
 
       {/* Call to Action */}
       <section
-        className="bg-blue-600 text-white py-16 text-center"
+        data-aos="fade-down"
+        className="bg-[#2A75B3] text-white py-16 text-center"
         id="contact">
         <h2 className="text-4xl font-bold">Siap Mengirimkan Barang Anda?</h2>
         <p className="mt-4 text-lg">
