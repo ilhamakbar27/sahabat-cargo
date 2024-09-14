@@ -9,6 +9,10 @@ import { Sidebar } from "@/components/ui/sidebar";
 import ChatWhatsapp from "@/lib/ChatWhatsapp";
 import { PhoneCall } from "lucide-react";
 import Footer from "@/components/footer";
+import warehouse from "./images/warehouse.png";
+import ship from "./images/ship.png";
+import time from "./images/time.png";
+import bgship from "./images/ship-bg.jpg";
 // ..Pho
 
 export default function Home() {
@@ -101,17 +105,23 @@ export default function Home() {
       {/* Services Section */}
       <main
         id="services"
-        className="container mx-auto p-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        style={{
+          backgroundImage: `url(${bgship})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="container mx-auto p-10  max-md:p-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 mt-16">
         {/* Service 1 */}
+        {/* <Image src={bgship} width={500} height={400} alt="jefkqg" /> */}
         <div
           data-aos="fade-down"
-          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src=""
+            src={warehouse}
             alt="Gudang"
             width={500}
             height={300}
-            className="rounded-lg"
+            className="rounded-lg max-md:size-40 lg:w-3/4 max-h-[200px]   object-cover"
           />
           <h3 className="text-2xl font-bold mt-5 text-gray-800">
             Jaringan Gudang Luas
@@ -125,15 +135,15 @@ export default function Home() {
         {/* Service 2 */}
         <div
           data-aos="fade-down"
-          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src=""
+            src={ship}
             alt="Pengiriman Kapal"
             width={500}
             height={300}
             className="rounded-lg"
           />
-          <h3 className="text-2xl font-bold mt-5 text-gray-800">
+          <h3 className="text-2xl font-bold mt-2 text-gray-800">
             Pengiriman Kapal
           </h3>
           <p className="mt-3 text-gray-600">
@@ -144,20 +154,19 @@ export default function Home() {
         {/* Service 3 */}
         <div
           data-aos="fade-down"
-          className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
           <Image
-            src=""
+            src={time}
             alt="Pengiriman Udara"
             width={500}
             height={300}
-            className="rounded-lg"
+            className="rounded-lg max-md:size-48 lg:w-full max-h-[200px]   object-cover"
           />
           <h3 className="text-2xl font-bold mt-5 text-gray-800">
-            Pengiriman Udara
+            Harga Termurah dan cepat
           </h3>
           <p className="mt-3 text-gray-600">
-            Pengiriman cepat dan handal melalui udara, ideal untuk barang
-            berharga dan mendesak.
+            Pengiriman termurah se Indonesia dengan layanan terbaik dan tercepat
           </p>
         </div>
       </main>
