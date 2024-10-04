@@ -14,18 +14,20 @@ import ship from "./images/ship.png";
 import time from "./images/time.png";
 import bgship from "./images/ship-bg.jpg";
 import AboutSection from "@/components/HomeComponent/about-section";
+import { PriceList } from "@/components/HomeComponent/price-list";
+
 // ..Pho
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 900,
-      // once: true,
+      once: true,
     });
   }, []);
   // AOS.init();
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col relative min-h-screen bg-gray-100">
       {/* Navbar */}
       <nav className="bg-white  shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
@@ -68,7 +70,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center min-h-screen bg-gray-200 pt-20">
+      <section className="relative flex justify-between min-h-screen bg-gray-200 pt-20">
         <Image
           src={poto}
           alt="Cargo Truck"
@@ -76,7 +78,7 @@ export default function Home() {
           objectFit="cover"
           className="brightness-75"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-5">
+        <div className="absolute inset-0 bg-black px-20 bg-opacity-50 flex flex-col items-start justify-center text-center ">
           <h2
             data-aos="fade-down"
             className="text-5xl text-white font-extrabold">
@@ -101,7 +103,11 @@ export default function Home() {
             </button>
           </ChatWhatsapp>
         </div>
+        <div className="absolute md:-translate-x-24  max-md:centered centered-right">
+          <PriceList />
+        </div>
       </section>
+
       <div className="min-h-screen max-md:mb-20">
         <AboutSection />
       </div>

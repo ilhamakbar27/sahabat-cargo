@@ -101,3 +101,31 @@ body {
     @apply text-3xl tracking-tight font-semibold;
   }
 }
+
+
+@layer components {
+  .centered {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .centered-bottom {
+    @apply bottom-0 left-1/2 -translate-x-1/2;
+  }
+  .centered-top {
+    @apply top-0 left-1/2 -translate-x-1/2;
+  }
+  .centered-left {
+    @apply top-1/2 left-0 -translate-y-1/2;
+  }
+  .top-right {
+    @apply top-0 translate-y-10 right-0;
+  }
+  .centered-right {
+    @apply top-1/2 right-0 -translate-y-1/2;
+  }
+  .centered-horizontal {
+    @apply left-1/2 -translate-x-1/2;
+  }
+  .bottom-right {
+    @apply bottom-0 right-0;
+  }
+}
