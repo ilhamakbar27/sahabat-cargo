@@ -103,7 +103,9 @@ export function PriceList() {
 
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col gap-3">
             {/* Destination Field */}
             <FormField
               control={form.control}
@@ -158,8 +160,8 @@ export function PriceList() {
             />
 
             {/* Submit Button */}
-            <Button type="submit" className="w-full">
-              Submit
+            <Button type="submit" size={"lg"} className="w-full mt-4">
+              Cek harga sekarang
             </Button>
           </form>
         </Form>
@@ -167,25 +169,47 @@ export function PriceList() {
 
       {/* Shipping Details Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent>
+        <DialogContent className="bg-white rounded-lg shadow-md p-6">
           <DialogHeader>
-            <DialogTitle>Harga Pengiriman</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-2xl font-semibold">
+              Harga Pengiriman
+            </DialogTitle>
+            <DialogDescription className="text-md text-gray-500">
               Berikut adalah detail harga pengiriman:
             </DialogDescription>
           </DialogHeader>
           {shippingDetails && (
-            <div className="space-y-4">
-              <p>Tujuan: {shippingDetails.name}</p>
-              <p>Berat: {shippingDetails.weight} kg</p>
-              <p>
-                Total Harga: Rp {shippingDetails.totalPrice.toLocaleString()}
-              </p>
-              <p>Estimasi Waktu: {shippingDetails.deliveryEstimate}</p>
+            <div className="mt-4 space-y-3">
+              <div className="flex justify-between">
+                <span className="font-medium">Tujuan:</span>
+                <span className="text-gray-700">{shippingDetails.name}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium">Berat:</span>
+                <span className="text-gray-700">
+                  {shippingDetails.weight} kg
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium">Total Harga:</span>
+                <span className="text-gray-700">
+                  Rp {shippingDetails.totalPrice.toLocaleString()}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium">Estimasi Waktu:</span>
+                <span className="text-gray-700">
+                  {shippingDetails.deliveryEstimate}
+                </span>
+              </div>
             </div>
           )}
-          <DialogFooter>
-            <Button type="button" onClick={() => setDialogOpen(false)}>
+          <DialogFooter className="mt-6">
+            <Button
+              type="button"
+              onClick={() => setDialogOpen(false)}
+              variant="default"
+              className="w-full">
               Tutup
             </Button>
           </DialogFooter>

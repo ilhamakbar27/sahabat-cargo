@@ -78,22 +78,29 @@ export default function Home() {
           objectFit="cover"
           className="brightness-75"
         />
-        <div className="absolute inset-0 bg-black px-20 bg-opacity-50 flex flex-col items-start justify-center text-center ">
-          <h2
-            data-aos="fade-down"
-            className="text-5xl text-white font-extrabold">
+        <div className="absolute inset-0 bg-black px-20  gap-3  bg-opacity-50 flex flex-col items-start justify-center text-center ">
+          <h2 data-aos="fade-down" className="text-5xl text-white font-bold">
             Logistik Terpercaya di Indonesia
           </h2>
-          <p data-aos="fade-down" className="text-lg text-gray-300 mt-3">
-            Kami hadir untuk memberikan solusi pengiriman terbaik bagi bisnis
-            Anda
+          <h4
+            data-aos="fade-down"
+            className="text-4xl  text-white font-semibold">
+            Termurah Terpercaya dan Cepat
+          </h4>
+          <p
+            data-aos="fade-down"
+            className="text-lg max-w-xl text-start text-gray-300 mt-3">
+            Kami hadir untuk memberikan solusi pengiriman yang handal, efisien,
+            dan terjangkau bagi bisnis Anda. Dengan jaringan luas dan pengalaman
+            di bidang logistik, kami siap membantu memperlancar setiap proses
+            pengiriman Anda
           </p>
           <ChatWhatsapp
             phone="+6282393933313"
             message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
             <button
               data-aos="fade-down"
-              className="mt-6 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+              className="mt-6 px-8 py-3  bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
               <div className="flex gap-4 items-center">
                 <PhoneCall className="size-5" />
                 <p className=" text-lg tracking-tight font-[800]">
