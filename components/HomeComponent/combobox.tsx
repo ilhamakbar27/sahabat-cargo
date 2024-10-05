@@ -20,7 +20,7 @@ import {
 import { CheckIcon } from "lucide-react";
 import { Label } from "../ui/label";
 
-const frameworks = [
+const kota = [
   {
     value: "jakarta",
     label: "Jakarta",
@@ -58,7 +58,7 @@ export function ComboboxDemo() {
             aria-expanded={open}
             className="w-[400px] justify-between">
             {value
-              ? frameworks.find((framework) => framework.value === value)?.label
+              ? kota.find((framework) => framework.value === value)?.label
               : "Masukkan kota asal"}
           </Button>
         </PopoverTrigger>
@@ -68,7 +68,7 @@ export function ComboboxDemo() {
             <CommandList>
               <CommandEmpty>Tidak ditemukan.</CommandEmpty>
               <CommandGroup>
-                {frameworks.map((framework) => (
+                {kota.map((framework) => (
                   <CommandItem
                     key={framework.value}
                     value={framework.value}

@@ -1,16 +1,19 @@
-import * as React from "react";
+"use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -18,7 +21,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 import {
   Dialog,
   DialogClose,
@@ -27,92 +29,168 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-import { ComboboxDemo } from "./combobox";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { shippingDestinations } from "@/lib/destinations";
+// Define Zod schema for form validation
+const FormSchema = z.object({
+  destination: z.string().nonempty({ message: "Tujuan harus dipilih." }),
+  weight: z.number({ invalid_type_error: "Berat harus berupa angka." }),
+  // Base minimum weight for all
+});
 
-interface Province {
-  id: string;
-  name: string;
-}
-
-export const provinces: Province[] = [
-  {
-    id: "1",
-    name: "Aceh",
-  },
-  {
-    id: "2",
-    name: "Bali",
-  },
-  {
-    id: "3",
-    name: "Jakarta",
-  },
-  {
-    id: "4",
-    name: "Surabaya",
-  },
-];
+type FormData = z.infer<typeof FormSchema>;
 
 export function PriceList() {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [shippingDetails, setShippingDetails] = useState<{
+    name: string;
+    weight: number;
+    totalPrice: number;
+    deliveryEstimate: string;
+  } | null>(null);
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      destination: "",
+      weight: undefined,
+    },
+  });
+
+  function onSubmit(data: FormData) {
+    const destinationData = shippingDestinations.find(
+      (dest) => dest.id === data.destination
+    );
+
+    if (!destinationData) {
+      // Handle error (you can add an error message here if needed)
+      return;
+    }
+
+    // Ensure weight meets destination's specific minimum weight requirement
+    if (data.weight < destinationData.minWeight) {
+      form.setError("weight", {
+        type: "manual",
+        message: `Berat minimal untuk ${destinationData.name} adalah ${destinationData.minWeight} kg.`,
+      });
+      return;
+    }
+    // Calculate the shipping cost
+    const totalPrice = destinationData.pricePerKg * data.weight;
+    // Set shipping details and open dialog
+    setShippingDetails({
+      name: destinationData.name,
+      weight: data.weight,
+      totalPrice,
+      deliveryEstimate: destinationData.deliveryEstimate,
+    });
+    setDialogOpen(true);
+  }
+
   return (
     <Card className="w-[450px] max-md:w-[300px]">
       <CardHeader>
-        <CardTitle>Input Harga </CardTitle>
+        <CardTitle>Input Harga</CardTitle>
         <CardDescription>Lihat harga dalam 1 klik saja.</CardDescription>
       </CardHeader>
+
       <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Kota asal</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Pilih provinsi asal" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  {provinces.map((province) => (
-                    <SelectItem key={province.id} value={province.id}>
-                      {province.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <ComboboxDemo />
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Berat (kg) </Label>
-              <Input
-                type="number"
-                id="name"
-                placeholder="Masukkan Berat dalam kg"
-              />
-            </div>
-          </div>
-        </form>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            {/* Destination Field */}
+            <FormField
+              control={form.control}
+              name="destination"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Tujuan</FormLabel>
+                  <FormControl>
+                    <Select onValueChange={field.onChange}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Pilih tujuan pengiriman" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {shippingDestinations.map((destination) => (
+                          <SelectItem
+                            key={destination.id}
+                            value={destination.id}>
+                            {destination.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.errors.destination?.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Weight Field */}
+            <FormField
+              control={form.control}
+              name="weight"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Berat (kg)</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      placeholder="Masukkan Berat dalam kg"
+                      {...field}
+                      value={field.value || ""}
+                      onChange={(e) => field.onChange(+e.target.value)} // Convert string to number
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.errors.weight?.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Submit Button */}
+            <Button type="submit" className="w-full">
+              Submit
+            </Button>
+          </form>
+        </Form>
       </CardContent>
 
-      <CardFooter className="flex justify-center">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button size={"lg"}>Cek harga sekarang</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px] bg-white">
-            <DialogHeader>
-              <DialogTitle>Tarif Dari Jakarta ke Bali</DialogTitle>
-            </DialogHeader>
+      {/* Shipping Details Dialog */}
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Harga Pengiriman</DialogTitle>
             <DialogDescription>
-              Harga Tarif adalah Rp. 100.000
+              Berikut adalah detail harga pengiriman:
             </DialogDescription>
-            <DialogFooter>
-              <DialogClose>
-                <Button type="submit">Save changes</Button>
-              </DialogClose>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      </CardFooter>
+          </DialogHeader>
+          {shippingDetails && (
+            <div className="space-y-4">
+              <p>Tujuan: {shippingDetails.name}</p>
+              <p>Berat: {shippingDetails.weight} kg</p>
+              <p>
+                Total Harga: Rp {shippingDetails.totalPrice.toLocaleString()}
+              </p>
+              <p>Estimasi Waktu: {shippingDetails.deliveryEstimate}</p>
+            </div>
+          )}
+          <DialogFooter>
+            <Button type="button" onClick={() => setDialogOpen(false)}>
+              Tutup
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </Card>
   );
 }
