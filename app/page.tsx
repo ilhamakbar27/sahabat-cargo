@@ -32,11 +32,11 @@ export default function Home() {
       <nav className="bg-white  shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <Image
-            className="object-cover size-20"
+            className="object-cover size-24"
             width={600}
             height={400}
             src={
-              "https://utfs.io/f/cccd5361-35ac-4f74-92bf-9775c21b59a4-5nw59t.png"
+              "https://utfs.io/f/1T6lrtsFpELwUAqEIw6Y3McOxCBkioa20rvzyTE9Dtb6sfZu"
             }
             alt=""
           />

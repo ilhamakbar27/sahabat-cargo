@@ -37,6 +37,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { shippingDestinations } from "@/lib/destinations";
+import { ComboboxDemo } from "./combobox";
 // Define Zod schema for form validation
 const FormSchema = z.object({
   destination: z.string().nonempty({ message: "Tujuan harus dipilih." }),
@@ -165,7 +166,6 @@ export function PriceList() {
           </form>
         </Form>
       </CardContent>
-
       {/* Shipping Details Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="bg-white rounded-lg shadow-md p-6">

@@ -11,7 +11,7 @@ const Footer = () => {
             width={600}
             height={400}
             src={
-              "https://utfs.io/f/cccd5361-35ac-4f74-92bf-9775c21b59a4-5nw59t.png"
+              "https://utfs.io/f/1T6lrtsFpELwUAqEIw6Y3McOxCBkioa20rvzyTE9Dtb6sfZu"
             }
             alt="Company Logo"
           />
