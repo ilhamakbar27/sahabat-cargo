@@ -14,20 +14,20 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Putra Dunia Logistik",
+  title: "Putra Dunia Cargo",
   description:
-    "Putra Dunia Logistik: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang lebih cepat dari yang Anda pikirkan, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
+    "Putra Dunia Cargo: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang lebih cepat dari yang Anda pikirkan, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
   openGraph: {
-    title: "Putra Dunia Logistik - Solusi Logistik Anda",
+    title: "Putra Dunia Cargo - Solusi Cargo Anda",
     description:
       "Dengan Putra Dunia Logistik, pengiriman barang Anda lebih cepat dari yang Anda pikirkan, aman, dan terpercaya. Kami adalah solusi logistik terbaik di Indonesia.",
-    url: "https://www.putradunialogistik.com/", // Replace with actual URL
+    url: "https://putraduniacargo.com/", // Replace with actual URL
     type: "website",
     locale: "id_ID",
-    siteName: "Putra Dunia Logistik",
+    siteName: "Putra Dunia Cargo",
     images: [
       {
-        url: "https://utfs.io/f/1T6lrtsFpELwUAqEIw6Y3McOxCBkioa20rvzyTE9Dtb6sfZu", // Replace with your actual image URL
+        url: "https://utfs.io/f/1T6lrtsFpELwp8Ez1IqMzy29cVnXes5bCQBAuUZFYgTrtvEG", // Replace with your actual image URL
         width: 800,
         height: 600,
         alt: "Logo Putra Dunia Logistik - lebih cepat dari yang Anda pikirkan",
