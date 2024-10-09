@@ -15,6 +15,7 @@ import time from "./images/time.png";
 import bgship from "./images/ship-bg.jpg";
 import AboutSection from "@/components/HomeComponent/about-section";
 import { PriceList } from "@/components/HomeComponent/price-list";
+import Testimony from "@/components/testimoni";
 
 // ..Pho
 
@@ -32,11 +33,11 @@ export default function Home() {
       <nav className="bg-white  shadow-lg fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <Image
-            className="object-cover size-24"
+            className="object-contain size-24"
             width={600}
             height={400}
             src={
-              "https://utfs.io/f/1T6lrtsFpELwUAqEIw6Y3McOxCBkioa20rvzyTE9Dtb6sfZu"
+              "https://utfs.io/f/1T6lrtsFpELwp8Ez1IqMzy29cVnXes5bCQBAuUZFYgTrtvEG"
             }
             alt=""
           />
@@ -78,47 +79,33 @@ export default function Home() {
           objectFit="cover"
           className="brightness-75"
         />
-        <div className="absolute inset-0 bg-black px-20  gap-3  bg-opacity-50 flex flex-col items-start justify-center text-center ">
-          <h2 data-aos="fade-down" className="text-5xl text-white font-bold">
-            Logistik Terpercaya di Indonesia
+        <div className="absolute inset-0 bg-black px-20 max-md:items-center max-md:px-5 gap-3  bg-opacity-50 flex flex-col items-start justify-center text-center ">
+          <h2
+            data-aos="fade-down"
+            className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
+            Walaupun kirim barang banyakan kami tetap lebih cepat dari yang anda
+            pikirkan
           </h2>
-          <h4
-            data-aos="fade-down"
-            className="text-4xl  text-white font-semibold">
-            Termurah Terpercaya dan Cepat
-          </h4>
-          <p
-            data-aos="fade-down"
-            className="text-lg max-w-xl text-start text-gray-300 mt-3">
-            Kami hadir untuk memberikan solusi pengiriman yang handal, efisien,
-            dan terjangkau bagi bisnis Anda. Dengan jaringan luas dan pengalaman
-            di bidang logistik, kami siap membantu memperlancar setiap proses
-            pengiriman Anda
-          </p>
           <ChatWhatsapp
-            phone="+6282393933313"
+            phone="+6281313130765"
             message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
             <button
               data-aos="fade-down"
-              className="mt-6 px-8 py-3  bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+              className="mt-6 px-10 py-3  bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
               <div className="flex gap-4 items-center">
                 <PhoneCall className="size-5" />
                 <p className=" text-lg tracking-tight font-[800]">
-                  Dapatkan Promo Sekarang
+                  Harga spesial Buat bos
                 </p>
               </div>
             </button>
           </ChatWhatsapp>
         </div>
-        <div className="absolute md:-translate-x-24  max-md:centered centered-right">
+        <div className="absolute md:-translate-x-24  max-md:-translate-x-36 max-md:translate-y-32  max-md:centered centered-right">
           <PriceList />
         </div>
       </section>
 
-      <div className="min-h-screen max-md:mb-20">
-        <AboutSection />
-      </div>
-      {/* Services Section */}
       <main
         id="services"
         style={{
@@ -147,7 +134,24 @@ export default function Home() {
             pengiriman cepat dan aman.
           </p>
         </div>
-
+        {/* Service 3 */}
+        <div
+          data-aos="fade-down"
+          className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
+          <Image
+            src={time}
+            alt="Pengiriman Udara"
+            width={500}
+            height={300}
+            className="rounded-lg max-md:size-48 lg:w-full max-h-[200px]   object-cover"
+          />
+          <h3 className="text-2xl font-bold mt-5 text-gray-800">
+            Harga Termurah dan cepat
+          </h3>
+          <p className="mt-3 text-gray-600">
+            Pengiriman termurah se Indonesia dengan layanan terbaik dan tercepat
+          </p>
+        </div>
         {/* Service 2 */}
         <div
           data-aos="fade-down"
@@ -168,39 +172,33 @@ export default function Home() {
           </p>
         </div>
         {/* Service 3 */}
-        <div
-          data-aos="fade-down"
-          className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
-          <Image
-            src={time}
-            alt="Pengiriman Udara"
-            width={500}
-            height={300}
-            className="rounded-lg max-md:size-48 lg:w-full max-h-[200px]   object-cover"
-          />
-          <h3 className="text-2xl font-bold mt-5 text-gray-800">
-            Harga Termurah dan cepat
-          </h3>
-          <p className="mt-3 text-gray-600">
-            Pengiriman termurah se Indonesia dengan layanan terbaik dan tercepat
-          </p>
-        </div>
       </main>
+      <div className="min-h-screen max-md:mb-20">
+        <AboutSection />
+      </div>
 
       {/* Call to Action */}
+
       <section
         data-aos="fade-down"
         className="bg-[#2A75B3] text-white py-16 text-center"
         id="contact">
-        <h2 className="text-4xl font-bold">Siap Mengirimkan Barang Anda?</h2>
-        <p className="mt-4 text-lg">
-          Hubungi kami sekarang dan dapatkan penawaran terbaik untuk bisnis
-          Anda!
-        </p>
-        <button className="mt-8 px-10 py-4 bg-yellow-400 text-blue-600 font-bold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
-          Kontak Kami
-        </button>
+        <h2 className="text-4xl font-bold">Sudah siap kirim barang, bos?</h2>
+        <ChatWhatsapp
+          phone="+6281313130765"
+          message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
+          <button
+            data-aos="fade-down"
+            className="mt-6 px-10 py-3  bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+            <div className="flex gap-4 items-center">
+              <p className=" text-lg tracking-tight font-[800]">
+                Harga spesial Buat bos
+              </p>
+            </div>
+          </button>
+        </ChatWhatsapp>
       </section>
+      <Testimony />
 
       {/* Footer */}
       <Footer />

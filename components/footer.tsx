@@ -7,11 +7,11 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8">
           <Image
-            className="object-cover size-32"
+            className="object-contain size-32"
             width={600}
             height={400}
             src={
-              "https://utfs.io/f/1T6lrtsFpELwUAqEIw6Y3McOxCBkioa20rvzyTE9Dtb6sfZu"
+              "https://utfs.io/f/1T6lrtsFpELwp8Ez1IqMzy29cVnXes5bCQBAuUZFYgTrtvEG"
             }
             alt="Company Logo"
           />
@@ -282,7 +282,7 @@ const Footer = () => {
         </div>
 
         <p className="mt-12 text-sm text-gray-500">
-          &copy; 2024 Sahabat Baru Cargo. All rights reserved.
+          &copy; 2024 Putra Dunia Cargo. All rights reserved.
         </p>
       </div>
     </footer>
