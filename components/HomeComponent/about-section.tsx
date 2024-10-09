@@ -1,36 +1,6 @@
-import bgship from "@/app/images/ship-bg.jpg";
-import Image from "next/image";
 import React from "react";
 import { CarouselDemo } from "../carousel-about";
 import { Button } from "../ui/button";
-interface AboutSectionProps {
-  id: string;
-  title: string;
-  desription: string;
-}
-
-const dataAboutSection: AboutSectionProps[] = [
-  {
-    id: "about",
-    title: "10+ Years",
-    desription: "Experience in Global Shipping",
-  },
-  {
-    id: "about-2",
-    title: "5000+ Shipments",
-    desription: " Successfully Delivered Across Indonesia",
-  },
-  {
-    id: "about-3",
-    title: "50+ Awards",
-    desription: "Recognized for Service Excellence",
-  },
-  {
-    id: "about-4",
-    title: "98% Client Satisfaction",
-    desription: "Committed to Delivering on Promises",
-  },
-];
 
 const AboutSection = () => {
   return (
@@ -62,11 +32,11 @@ const AboutSection = () => {
                     className="text-gray-500 text-base font-normal lg:pt-3 max-md:text-start leading-relaxed lg:text-start text-center">
                     Pada tahun 2020 hingga sekarang, kami dikenal sebagai
                     Sahabat Baru Cargo. Kini, kami telah melakukan perubahan
-                    nama menjadi 'Putra Dunia Cargo', dengan harapan dapat
-                    memberikan layanan yang lebih baik dan terpercaya. Dengan
-                    identitas baru ini, kami berkomitmen untuk terus melayani
-                    pelanggan dengan profesionalisme, keandalan, dan inovasi
-                    yang lebih baik.
+                    nama menjadi &apos;Putra Dunia Cargo&apos;, dengan harapan
+                    dapat memberikan layanan yang lebih baik dan terpercaya.
+                    Dengan identitas baru ini, kami berkomitmen untuk terus
+                    melayani pelanggan dengan profesionalisme, keandalan, dan
+                    inovasi yang lebih baik.
                   </p>
                 </div>
               </div>
