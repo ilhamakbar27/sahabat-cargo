@@ -15,9 +15,9 @@ const ChatWhatsapp = ({
   message,
   ...restProps
 }: ChatWhatsappProps) => {
-  const baseUrl = !isMobile
-    ? "https://web.whatsapp.com/send"
-    : "https://api.whatsapp.com/send";
+  const baseUrl = isMobile
+    ? "https://api.whatsapp.com/send"
+    : "https://web.whatsapp.com/send";
 
   const queryParams = phone
     ? `?phone=${phone}${message ? `&text=${encodeURIComponent(message)}` : ""}`
