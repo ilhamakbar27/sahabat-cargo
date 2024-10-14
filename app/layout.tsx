@@ -14,13 +14,18 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Putra Dunia Cargo",
+  metadataBase: new URL("https://www.putraduniacargo.com"),
+  title: {
+    default: "Putra Dunia Cargo",
+    template: "%s - Putra Dunia Cargo",
+  },
   description:
     "Putra Dunia Cargo: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang lebih cepat dari yang Anda pikirkan, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
   openGraph: {
     title: "Putra Dunia Cargo - Solusi Cargo Anda",
     description:
-      "Dengan Putra Dunia Logistik, pengiriman barang Anda lebih cepat dari yang Anda pikirkan, aman, dan terpercaya. Kami adalah solusi logistik terbaik di Indonesia.",
+      "Putra Dunia Cargo: Solusi Pengiriman Barang Terpercaya di Indonesia. Kami menawarkan layanan pengiriman barang lebih cepat dari yang Anda pikirkan, aman, dan terjangkau dengan jaringan luas di seluruh nusantara.",
+
     url: "https://putraduniacargo.com/", // Replace with actual URL
     type: "website",
     locale: "id_ID",
@@ -44,7 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
