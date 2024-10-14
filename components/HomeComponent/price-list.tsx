@@ -37,7 +37,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { shippingDestinations } from "@/lib/destinations";
-
+import { ComboboxDemo } from "./combobox";
 // Define Zod schema for form validation
 const FormSchema = z.object({
   destination: z.string().nonempty({ message: "Tujuan harus dipilih." }),
@@ -105,7 +105,8 @@ export function PriceList() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col gap-3">
+            className="flex flex-col gap-3"
+          >
             {/* Destination Field */}
             <FormField
               control={form.control}
@@ -122,7 +123,8 @@ export function PriceList() {
                         {shippingDestinations.map((destination) => (
                           <SelectItem
                             key={destination.id}
-                            value={destination.id}>
+                            value={destination.id}
+                          >
                             {destination.name}
                           </SelectItem>
                         ))}
@@ -136,6 +138,7 @@ export function PriceList() {
               )}
             />
 
+            <ComboboxDemo />
             {/* Weight Field */}
             <FormField
               control={form.control}
@@ -208,7 +211,8 @@ export function PriceList() {
               type="button"
               onClick={() => setDialogOpen(false)}
               variant="default"
-              className="w-full">
+              className="w-full"
+            >
               Tutup
             </Button>
           </DialogFooter>

@@ -40,8 +40,8 @@ export function CarouselDemo() {
       <CarouselContent>
         {cargoHistorySlides.map((slide, index) => (
           <CarouselItem key={index}>
-            <div className="relative p-1">
-              <Card className="bg-gray-700 text-white">
+            <div className="relative max-h-[620px] ">
+              <Card className="bg-gray-700  text-white">
                 <div className="relative h-64 w-full">
                   <Image
                     src={slide.imageUrl}
@@ -51,7 +51,7 @@ export function CarouselDemo() {
                     className="rounded-t-lg"
                   />
                 </div>
-                <CardContent className="flex flex-col items-center justify-center p-6 bg-[#1c5d95]">
+                <CardContent className="flex flex-col items-center justify-center min-h-[300px] p-6 bg-[#1c5d95]">
                   <h2 className="text-3xl font-bold mb-7 text-center">
                     {slide.title}
                   </h2>
