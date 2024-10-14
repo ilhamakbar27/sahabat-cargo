@@ -15,7 +15,7 @@ const ChatWhatsapp = ({
   message,
   ...restProps
 }: ChatWhatsappProps) => {
-  const baseUrl = isMobile
+  const baseUrl = !isMobile
     ? "https://web.whatsapp.com/send"
     : "https://api.whatsapp.com/send";
 
