@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 // import {mobileCheck} from './mobile-check'
 import { isMobile } from "react-device-detect";
@@ -24,13 +25,14 @@ const ChatWhatsapp = ({
     : "";
 
   return (
-    <a
+    <Link
       href={baseUrl + queryParams}
       target="_blank"
       rel="noreferrer noopener"
-      {...restProps}>
+      {...restProps}
+    >
       {children}
-    </a>
+    </Link>
   );
 };
 
