@@ -101,9 +101,9 @@ export default function Home() {
             </button>
           </ChatWhatsapp>
         </div>
-        {/* <div className="absolute md:-translate-x-24  max-md:-translate-x-36 max-md:translate-y-32  max-md:centered centered-right">
+        <div className="absolute md:-translate-x-24  max-md:-translate-x-36 max-md:translate-y-32  max-md:centered centered-right">
           <PriceList />
-        </div> */}
+        </div>
       </section>
 
       <main

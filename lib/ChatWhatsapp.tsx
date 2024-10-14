@@ -41,13 +41,6 @@ const ChatWhatsapp = ({
       >
         {children}
       </Link>
-
-      {/* <BrowserView>
-        <h1 className="text-white">This is rendered only in browser</h1>
-      </BrowserView>
-      <MobileView>
-        <h1 className="">This is rendered only on mobile</h1>
-      </MobileView> */}
     </>
   );
 };
