@@ -54,7 +54,7 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="#services"
+                href="/services"
                 className="text-gray-700 hover:text-blue-600 transition duration-300">
                 Layanan
               </a>

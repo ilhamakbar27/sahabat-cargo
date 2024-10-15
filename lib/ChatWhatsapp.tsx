@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { mobileCheck } from "./mobile-check";
-// import { isMobile, BrowserView, MobileView } from "react-device-detect";
 
 interface ChatWhatsappProps {
   children: React.ReactNode;
@@ -24,6 +22,7 @@ const ChatWhatsapp = ({
     setIsMobileDevice(isMobile);
   }, []);
 
+
   const baseUrl = isMobileDevice
     ? "https://api.whatsapp.com/send"
     : "https://web.whatsapp.com/send";
@@ -33,14 +32,13 @@ const ChatWhatsapp = ({
     : "";
   return (
     <>
-      <Link
+      <a
         href={baseUrl + queryParams}
         target="_blank"
         rel="noreferrer noopener"
-        {...restProps}
-      >
+        {...restProps}>
         {children}
-      </Link>
+      </a>
     </>
   );
 };
