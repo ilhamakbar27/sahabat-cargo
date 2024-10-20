@@ -5,7 +5,6 @@ import poto from "./images/cargo.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect } from "react";
-import { Sidebar } from "@/components/ui/sidebar";
 import ChatWhatsapp from "@/lib/ChatWhatsapp";
 import { PhoneCall } from "lucide-react";
 import Footer from "@/components/footer";
