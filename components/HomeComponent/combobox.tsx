@@ -30,6 +30,10 @@ const kota = [
     label: "Surabaya",
   },
   {
+    value: "palembang",
+    label: "Palembang",
+  },
+  {
     value: "bandung",
     label: "Bandung",
   },
@@ -49,20 +53,22 @@ export function ComboboxDemo() {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <Label htmlFor="framework">Kota tujuan</Label>
+      <Label className="flex justify-start items-start" htmlFor="framework">
+        Kota asal
+      </Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-[400px] justify-between">
+            className="w-[400px] max-md:w-[350px] justify-between">
             {value
               ? kota.find((framework) => framework.value === value)?.label
               : "Masukkan kota asal"}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[400px] p-0">
+        <PopoverContent className="w-[400px] max-md:w-[350px] p-0">
           <Command>
             <CommandInput placeholder="Cari kota tujuan" className="h-9" />
             <CommandList>

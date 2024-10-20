@@ -16,7 +16,7 @@ const AboutSection = () => {
                 <div
                   data-aos="fade-down"
                   className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-                  <h2 className="text-[#2C75B3] md:text-5xl text-4xl font-bold font-manrope leading-tight max-md:leading-tight lg:text-start text-center">
+                  <h2 className="text-[#2C75B3] md:text-5xl text-4xl font-bold  leading-tight max-md:leading-tight lg:text-start text-center">
                     Bawa yang Terbaik, Cepat Sampai ke Seluruh Indonesia
                   </h2>
                   <p
@@ -45,7 +45,7 @@ const AboutSection = () => {
               Read more
             </Button>
           </div>
-          <div className="w-full  ml-28 lg:justify-start max-md:mt-40 justify-center items-center flex">
+          <div className="w-full  md:ml-28 lg:justify-start max-md:mt-40  justify-center items-center flex">
             <CarouselDemo />
           </div>
         </div>

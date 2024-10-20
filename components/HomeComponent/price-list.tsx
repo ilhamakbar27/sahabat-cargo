@@ -95,7 +95,7 @@ export function PriceList() {
   }
 
   return (
-    <Card className="w-[450px] max-md:w-[300px]">
+    <Card className="w-[450px] max-md:w-[400px]">
       <CardHeader>
         <CardTitle>Input Harga</CardTitle>
         <CardDescription>Lihat harga dalam 1 klik saja.</CardDescription>
@@ -107,12 +107,15 @@ export function PriceList() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex flex-col gap-3">
             {/* Destination Field */}
+            <ComboboxDemo />
             <FormField
               control={form.control}
               name="destination"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Tujuan</FormLabel>
+                <FormItem className="">
+                  <FormLabel className="flex justify-start items-start">
+                    Tujuan
+                  </FormLabel>
                   <FormControl>
                     <Select onValueChange={field.onChange}>
                       <SelectTrigger>
@@ -136,14 +139,15 @@ export function PriceList() {
               )}
             />
 
-            <ComboboxDemo />
             {/* Weight Field */}
             <FormField
               control={form.control}
               name="weight"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Berat (kg)</FormLabel>
+                  <FormLabel className="flex justify-start items-start">
+                    Berat (kg)
+                  </FormLabel>
                   <FormControl>
                     <Input
                       type="number"
@@ -169,7 +173,7 @@ export function PriceList() {
       </CardContent>
       {/* Shipping Details Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-white rounded-lg shadow-md p-6">
+        <DialogContent className="bg-white rounded-lg shadow-md max-md:mx-auto  p-6">
           <DialogHeader>
             <DialogTitle className="text-2xl font-semibold">
               Harga Pengiriman

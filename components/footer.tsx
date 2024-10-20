@@ -280,10 +280,15 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        <p className="mt-12 text-sm text-gray-500">
-          &copy; 2024 Putra Dunia Cargo. All rights reserved.
-        </p>
+        <div className="flex mt-12 flex-col gap-1">
+          <p className=" text-sm text-gray-500">
+            Jl. Kh Mas Mansyur no. 25 komplek said naum kebon kacang tanah abang
+            Jakarta pusat
+          </p>
+          <p className="text-sm text-gray-500">
+            &copy; 2024 Putra Dunia Cargo. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

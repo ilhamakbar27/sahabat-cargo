@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 
@@ -12,7 +12,7 @@ const Contact = () => {
           className="w-full h-screen object-cover"
         />
       </div>
-      <div className="py-12 flex-1 lg:flex mt-24 lg:justify-center lg:h-screen lg:overflow-auto">
+      <div className="py-12 flex-1 lg:flex pt-32 lg:justify-center lg:h-screen lg:overflow-auto">
         <div className="max-w-lg flex-1 mx-auto px-4 text-gray-600">
           <div>
             <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">

@@ -14,10 +14,44 @@ import time from "./images/time.png";
 import bgship from "./images/ship-bg.jpg";
 import AboutSection from "@/components/HomeComponent/about-section";
 import { PriceList } from "@/components/HomeComponent/price-list";
-import Testimony from "@/components/testimoni";
+import TestimonialSliderCard from "@/components/testimoni";
 
 // ..Pho
 
+const testimonials = [
+  {
+    quote:
+      "Pengalaman saya menggunakan layanan kargo laut sangat memuaskan! Pengiriman tepat waktu, barang tiba aman tanpa kerusakan, dan biaya kompetitif. Tim customer service juga responsif dan informatif. Sangat direkomendasikan untuk pengiriman barang via laut",
+    name: "Pemerintah Provinsi",
+    role: "Kepala dinas",
+    imgSrc:
+      "https://utfs.io/f/1T6lrtsFpELwjuaqWqRG6pHwE9BicKAC7UvqV4MmXbWLtQnx",
+  },
+  {
+    quote:
+      "Pengalaman saya menggunakan layanan kargo laut sangat memuaskan! Pengiriman tepat waktu, barang tiba aman tanpa kerusakan, dan biaya kompetitif. Tim customer service juga responsif dan informatif. Sangat direkomendasikan untuk pengiriman barang via laut",
+    name: "Unit Penyelamatan Satwa",
+    role: "Ditjen KSDAE",
+    imgSrc:
+      "https://utfs.io/f/1T6lrtsFpELwGa6EcDUJkc2CGBXfg3rFtuK6054jqeSHML91",
+  },
+  {
+    quote:
+      "Pengalaman saya menggunakan layanan kargo laut sangat memuaskan! Pengiriman tepat waktu, barang tiba aman tanpa kerusakan, dan biaya kompetitif. Tim customer service juga responsif dan informatif. Sangat direkomendasikan untuk pengiriman barang via laut",
+    name: "Pemerintah Provinsi",
+    role: "Kepala dinas",
+    imgSrc:
+      "https://utfs.io/f/1T6lrtsFpELwjuaqWqRG6pHwE9BicKAC7UvqV4MmXbWLtQnx",
+  },
+  {
+    quote:
+      "Pengalaman saya menggunakan layanan kargo laut sangat memuaskan! Pengiriman tepat waktu, barang tiba aman tanpa kerusakan, dan biaya kompetitif. Tim customer service juga responsif dan informatif. Sangat direkomendasikan untuk pengiriman barang via laut",
+    name: "Unit Penyelamatan Satwa",
+    role: "Ditjen KSDAE",
+    imgSrc:
+      "https://utfs.io/f/1T6lrtsFpELwGa6EcDUJkc2CGBXfg3rFtuK6054jqeSHML91",
+  },
+];
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -27,12 +61,8 @@ export default function Home() {
   }, []);
   // AOS.init();
   return (
-    <div className="flex flex-col relative min-h-screen bg-gray-100">
-      {/* Navbar */}
-
-
-      {/* Hero Section */}
-      <section className="relative flex justify-between min-h-screen bg-gray-200 pt-20">
+    <div className="flex flex-col relative min-h-screen  bg-gray-100">
+      <section className="relative flex justify-between max-md:flex-col max-md:gap-12 max-md:min-h-[1000px] min-h-screen bg-gray-200 pt-20">
         <Image
           src={poto}
           alt="Cargo Truck"
@@ -40,30 +70,35 @@ export default function Home() {
           objectFit="cover"
           className="brightness-75"
         />
-        <div className="absolute inset-0 bg-black px-20 max-md:items-center max-md:px-5 gap-3  bg-opacity-50 flex flex-col items-start justify-center text-center ">
-          <h2
-            data-aos="fade-down"
-            className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
-            Walaupun kirim barang banyakan kami tetap lebih cepat dari yang anda
-            pikirkan
-          </h2>
-          <ChatWhatsapp
-            phone="+6281313130765"
-            message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
-            <button
+        <div className="flex justify-between absolute inset-0 max-md:flex-col bg-black bg-opacity-50">
+          <div className="w-[60%] max-md:w-full max-md:mt-44 px-20 max-md:items-center max-md:px-5 max-md:gap-5 flex flex-col items-start justify-center  max-md:justify-center text-center">
+            <h2
               data-aos="fade-down"
-              className="mt-6 px-10 py-3  bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
-              <div className="flex gap-4 items-center">
-                <PhoneCall className="size-5" />
-                <p className=" text-lg tracking-tight font-[800]">
-                  Harga spesial Buat bos
-                </p>
-              </div>
-            </button>
-          </ChatWhatsapp>
-        </div>
-        <div className="absolute md:-translate-x-24  max-md:-translate-x-36 max-md:translate-y-32  max-md:centered centered-right">
-          <PriceList />
+              className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
+              Bingung kirim barang-barang besar solusinya hanya disni, kirim
+              barang tanpa harus ribet dan mahal
+            </h2>
+            <ChatWhatsapp
+              phone="+6281313130765"
+              message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
+              <button
+                data-aos="fade-down"
+                className="mt-6 px-10 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition duration-300">
+                <div className="flex gap-4 items-center">
+                  <PhoneCall className="size-5" />
+                  <p className="text-lg tracking-tight font-[800]">
+                    Harga spesial Buat bos
+                  </p>
+                </div>
+              </button>
+            </ChatWhatsapp>
+            <div className="md:hidden  mt-10 flex justify-start  items-start">
+              <PriceList />
+            </div>
+          </div>
+          <div className="w-[40%] max-md:hidden max-md:mt-0 flex justify-center items-center">
+            <PriceList />
+          </div>
         </div>
       </section>
 
@@ -75,8 +110,6 @@ export default function Home() {
           backgroundPosition: "center",
         }}
         className="container mx-auto p-10  max-md:p-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 mt-16">
-        {/* Service 1 */}
-        {/* <Image src={bgship} width={500} height={400} alt="jefkqg" /> */}
         <div
           data-aos="fade-down"
           className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
@@ -159,7 +192,7 @@ export default function Home() {
           </button>
         </ChatWhatsapp>
       </section>
-      <Testimony />
+      <TestimonialSliderCard testimonials={testimonials} />
 
       {/* Footer */}
       <Footer />
