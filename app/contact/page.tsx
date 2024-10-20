@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 
 const servicesItems = ["Jalur Laut", "Jalur darat", "Jalur udara"];
