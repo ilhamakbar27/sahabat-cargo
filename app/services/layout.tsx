@@ -1,18 +1,4 @@
-
-import type { Metadata } from "next";
-
-
-
-
-const metadata: Metadata = {
-
-    
-
-}
-
-
-
-
+//
 
 const layout = ({
   children,
