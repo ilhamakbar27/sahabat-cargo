@@ -31,7 +31,7 @@ const AboutSection = () => {
                     data-aos="fade-down"
                     className="text-gray-500 text-base font-normal lg:pt-3 max-md:text-start leading-relaxed lg:text-start text-center">
                     Sejak tahun 2020, kami telah berkembang dan kini hadir
-                    dengan identitas baru sebagai 'Putra Dunia Cargo'. Perubahan
+                    dengan identitas baru sebagai Putra Dunia Cargo. Perubahan
                     ini dilakukan untuk memperkuat komitmen kami dalam
                     memberikan layanan yang lebih baik, terpercaya, serta
                     didukung oleh profesionalisme, keandalan, dan inovasi yang
