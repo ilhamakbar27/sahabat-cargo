@@ -30,13 +30,12 @@ const AboutSection = () => {
                   <p
                     data-aos="fade-down"
                     className="text-gray-500 text-base font-normal lg:pt-3 max-md:text-start leading-relaxed lg:text-start text-center">
-                    Pada tahun 2020 hingga sekarang, kami dikenal sebagai
-                    Sahabat Baru Cargo. Kini, kami telah melakukan perubahan
-                    nama menjadi &apos;Putra Dunia Cargo&apos;, dengan harapan
-                    dapat memberikan layanan yang lebih baik dan terpercaya.
-                    Dengan identitas baru ini, kami berkomitmen untuk terus
-                    melayani pelanggan dengan profesionalisme, keandalan, dan
-                    inovasi yang lebih baik.
+                    Sejak tahun 2020, kami telah berkembang dan kini hadir
+                    dengan identitas baru sebagai 'Putra Dunia Cargo'. Perubahan
+                    ini dilakukan untuk memperkuat komitmen kami dalam
+                    memberikan layanan yang lebih baik, terpercaya, serta
+                    didukung oleh profesionalisme, keandalan, dan inovasi yang
+                    terus ditingkatkan.
                   </p>
                 </div>
               </div>

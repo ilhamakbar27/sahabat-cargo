@@ -1,5 +1,3 @@
-"use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -37,12 +35,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { shippingDestinations } from "@/lib/destinations";
-import { ComboboxDemo } from "./combobox";
 // Define Zod schema for form validation
 const FormSchema = z.object({
-  destination: z.string().nonempty({ message: "Tujuan harus dipilih." }),
-  weight: z.number({ invalid_type_error: "Berat harus berupa angka." }),
-  // Base minimum weight for all
+  from: z.string().nonempty({ message: "Asal harus dipilih." }),
+  to: z.string().nonempty({ message: "Tujuan harus dipilih." }),
+  weight: z
+    .number({
+      invalid_type_error: "Berat harus berupa angka.",
+    })
+    .min(1, "Berat minimal 1 kg."),
 });
 
 type FormData = z.infer<typeof FormSchema>;
@@ -50,7 +51,8 @@ type FormData = z.infer<typeof FormSchema>;
 export function PriceList() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [shippingDetails, setShippingDetails] = useState<{
-    name: string;
+    from: string;
+    to: string;
     weight: number;
     totalPrice: number;
     deliveryEstimate: string;
@@ -59,38 +61,47 @@ export function PriceList() {
   const form = useForm<FormData>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      destination: "",
+      from: "",
+      to: "",
       weight: undefined,
     },
   });
 
   function onSubmit(data: FormData) {
+    // Find the destination combination
     const destinationData = shippingDestinations.find(
-      (dest) => dest.id === data.destination
+      (dest) => dest.from === data.from && dest.to === data.to
     );
 
     if (!destinationData) {
-      // Handle error (you can add an error message here if needed)
-      return;
-    }
-
-    // Ensure weight meets destination's specific minimum weight requirement
-    if (data.weight < destinationData.minWeight) {
-      form.setError("weight", {
+      form.setError("to", {
         type: "manual",
-        message: `Berat minimal untuk ${destinationData.name} adalah ${destinationData.minWeight} kg.`,
+        message: `Tidak ada rute dari ${data.from} ke ${data.to}.`,
       });
       return;
     }
-    // Calculate the shipping cost
+
+    // Ensure weight meets destination's minimum weight requirement
+    if (data.weight < destinationData.minWeight) {
+      form.setError("weight", {
+        type: "manual",
+        message: `Berat minimal untuk ${destinationData.from} ke ${destinationData.to} adalah ${destinationData.minWeight} kg.`,
+      });
+      return;
+    }
+
+    // Calculate the total price
     const totalPrice = destinationData.pricePerKg * data.weight;
+
     // Set shipping details and open dialog
     setShippingDetails({
-      name: destinationData.name,
+      from: destinationData.from,
+      to: destinationData.to,
       weight: data.weight,
       totalPrice,
       deliveryEstimate: destinationData.deliveryEstimate,
     });
+
     setDialogOpen(true);
   }
 
@@ -100,19 +111,48 @@ export function PriceList() {
         <CardTitle>Input Harga</CardTitle>
         <CardDescription>Lihat harga dalam 1 klik saja.</CardDescription>
       </CardHeader>
-
       <CardContent>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex flex-col gap-3">
-            {/* Destination Field */}
-            <ComboboxDemo />
+            {/* From (Asal) Field */}
             <FormField
               control={form.control}
-              name="destination"
+              name="from"
               render={({ field }) => (
-                <FormItem className="">
+                <FormItem>
+                  <FormLabel className="flex justify-start items-start">
+                    Asal
+                  </FormLabel>
+                  <FormControl>
+                    <Select onValueChange={field.onChange}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Pilih asal pengiriman" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {Array.from(
+                          new Set(shippingDestinations.map((dest) => dest.from))
+                        ).map((from) => (
+                          <SelectItem key={from} value={from}>
+                            {from}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.errors.from?.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+            {/* To (Tujuan) Field */}
+            <FormField
+              control={form.control}
+              name="to"
+              render={({ field }) => (
+                <FormItem>
                   <FormLabel className="flex justify-start items-start">
                     Tujuan
                   </FormLabel>
@@ -122,23 +162,20 @@ export function PriceList() {
                         <SelectValue placeholder="Pilih tujuan pengiriman" />
                       </SelectTrigger>
                       <SelectContent>
-                        {shippingDestinations.map((destination) => (
-                          <SelectItem
-                            key={destination.id}
-                            value={destination.id}>
-                            {destination.name}
+                        {Array.from(
+                          new Set(shippingDestinations.map((dest) => dest.to))
+                        ).map((to) => (
+                          <SelectItem key={to} value={to}>
+                            {to}
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                   </FormControl>
-                  <FormMessage>
-                    {form.formState.errors.destination?.message}
-                  </FormMessage>
+                  <FormMessage>{form.formState.errors.to?.message}</FormMessage>
                 </FormItem>
               )}
             />
-
             {/* Weight Field */}
             <FormField
               control={form.control}
@@ -163,7 +200,6 @@ export function PriceList() {
                 </FormItem>
               )}
             />
-
             {/* Submit Button */}
             <Button type="submit" size={"lg"} className="w-full mt-4">
               Cek harga sekarang
@@ -171,9 +207,10 @@ export function PriceList() {
           </form>
         </Form>
       </CardContent>
+
       {/* Shipping Details Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-white rounded-lg shadow-md max-md:mx-auto  p-6">
+        <DialogContent className="bg-white rounded-lg shadow-md max-md:mx-auto p-6">
           <DialogHeader>
             <DialogTitle className="text-2xl font-semibold">
               Harga Pengiriman
@@ -185,8 +222,12 @@ export function PriceList() {
           {shippingDetails && (
             <div className="mt-4 space-y-3">
               <div className="flex justify-between">
+                <span className="font-medium">Asal:</span>
+                <span className="text-gray-700">{shippingDetails.from}</span>
+              </div>
+              <div className="flex justify-between">
                 <span className="font-medium">Tujuan:</span>
-                <span className="text-gray-700">{shippingDetails.name}</span>
+                <span className="text-gray-700">{shippingDetails.to}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Berat:</span>
