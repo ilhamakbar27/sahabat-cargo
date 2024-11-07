@@ -20,12 +20,13 @@ const Footer = () => {
             <div className="col-span-2">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Reliable Cargo Shipping
+                  Pengiriman Kargo Terpercaya
                 </h2>
 
                 <p className="mt-4 text-gray-500">
-                  We ensure your goods are delivered safely and on time to any
-                  destination worldwide. Trust us with your logistics.
+                  Kami memastikan barang Anda tiba dengan aman dan tepat waktu
+                  ke berbagai tujuan di seluruh dunia. Percayakan logistik Anda
+                  kepada kami.
                 </p>
               </div>
             </div>
@@ -282,7 +283,7 @@ const Footer = () => {
         </div>
         <div className="flex mt-12 flex-col gap-1">
           <p className=" text-sm text-gray-500">
-            Jl. Kh Mas Mansyur no. 25 komplek said naum kebon kacang tanah abang
+            Jl. KH Mansyur No. 25 Kompleks said naum kebon kacang Tanah abang
             Jakarta pusat
           </p>
           <p className="text-sm text-gray-500">

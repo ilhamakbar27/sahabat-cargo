@@ -15,8 +15,7 @@ import bgship from "./images/ship-bg.jpg";
 import AboutSection from "@/components/HomeComponent/about-section";
 import { PriceList } from "@/components/HomeComponent/price-list";
 import TestimonialSliderCard from "@/components/testimoni";
-
-// ..Pho
+import ListCompanies from "@/components/HomeComponent/list-companies";
 
 const testimonials = [
   {
@@ -75,7 +74,7 @@ export default function Home() {
             <h2
               data-aos="fade-down"
               className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
-              Bingung kirim barang-barang besar solusinya hanya disni, kirim
+              Bingung kirim barang-barang besar solusinya hanya disini, kirim
               barang tanpa harus ribet dan mahal
             </h2>
             <ChatWhatsapp
@@ -101,15 +100,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <h3 className="py-4 font-[600] p-3 text-center  text-[#1983C4] tracking-tight text-4xl  mt-12 max-md:text-2xl ">
+        Mengapa harus kami?
+      </h3>
       <main
         id="services"
-        style={{
-          backgroundImage: `url(${bgship})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className="container mx-auto p-10  max-md:p-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 mt-16">
+        // style={{
+        //   backgroundImage: `url(${bgship})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        // }}
+        className="container mx-auto p-10  max-md:p-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 ">
         <div
           data-aos="fade-down"
           className="bg-white p-8 flex items-center lg:max-h-[400px] flex-col rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 text-center">
@@ -170,9 +171,7 @@ export default function Home() {
       <div className="min-h-screen max-md:mb-20">
         <AboutSection />
       </div>
-
       {/* Call to Action */}
-
       <section
         data-aos="fade-down"
         className="bg-[#2A75B3] text-white py-16 text-center"
@@ -192,6 +191,7 @@ export default function Home() {
           </button>
         </ChatWhatsapp>
       </section>
+      <ListCompanies />
       <TestimonialSliderCard testimonials={testimonials} />
 
       {/* Footer */}
