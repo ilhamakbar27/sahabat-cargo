@@ -11,7 +11,7 @@ import Footer from "@/components/footer";
 import warehouse from "./images/warehouse.png";
 import ship from "./images/ship.png";
 import time from "./images/time.png";
-import bgship from "./images/ship-bg.jpg";
+
 import AboutSection from "@/components/HomeComponent/about-section";
 import { PriceList } from "@/components/HomeComponent/price-list";
 import TestimonialSliderCard from "@/components/testimoni";
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <h3 className="py-4 font-[600] p-3 text-center  text-[#1983C4] tracking-tight text-4xl  mt-12 max-md:text-2xl ">
+      <h3 className="py-4 font-[600] p-3 text-center  text-gray-900 tracking-tight text-4xl  mt-12 max-md:text-2xl ">
         Mengapa harus kami?
       </h3>
       <main
