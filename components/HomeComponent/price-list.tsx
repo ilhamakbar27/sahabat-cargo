@@ -106,7 +106,7 @@ export function PriceList() {
   }
 
   return (
-    <Card className="w-[450px] max-md:w-[400px]">
+    <Card className="w-[450px] max-md:w-[370px]">
       <CardHeader>
         <CardTitle>Input Harga</CardTitle>
         <CardDescription>Lihat harga dalam 1 klik saja.</CardDescription>

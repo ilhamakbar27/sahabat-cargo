@@ -31,27 +31,6 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-              <form className="w-full">
-                <label htmlFor="UserEmail" className="sr-only">
-                  Email
-                </label>
-
-                <div className="border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
-                  <input
-                    type="email"
-                    id="UserEmail"
-                    placeholder="your-email@example.com"
-                    className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
-                  />
-
-                  <button className="mt-1 w-full rounded-lg tracking-wider bg-blue-500 px-6 py-3 text-sm font-bold uppercase text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
-
             <div className="col-span-2 sm:col-span-1">
               <p className="font-medium text-gray-900">Services</p>
 
@@ -174,43 +153,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Legal</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Privacy Policy
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Terms of Service
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Shipping Policies
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Insurance Coverage
-                  </a>
-                </li>
-              </ul>
-            </div>
+            
 
             <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
               <li>
