@@ -7,16 +7,16 @@ const ServicePage = () => {
   return (
     <div>
       <section className="">
-        <div className="mx-auto  max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center mt-24">
             <h2 className="text-xl font-bold text-gray-900 sm:text-4xl">
-              Servis kita
+              Layanan Kami
             </h2>
 
             <p className="mx-auto mt-4 max-w-md text-gray-500">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-              praesentium cumque iure dicta incidunt est ipsam, officia dolor
-              fugit natus?
+              Kami menyediakan berbagai layanan pengiriman yang aman dan cepat
+              melalui jalur laut, darat, dan udara untuk memenuhi kebutuhan
+              kargo Anda.
             </p>
           </header>
 
@@ -25,13 +25,13 @@ const ServicePage = () => {
               <a href="#" className="group relative block">
                 <img
                   src="https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                  alt=""
+                  alt="Pengiriman Jalur Darat"
                   className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                 />
 
                 <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
                   <h3 className="text-xl font-medium text-white">
-                    Casual Trainers
+                    Pengiriman Jalur Darat
                   </h3>
 
                   <span className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
@@ -45,13 +45,13 @@ const ServicePage = () => {
               <a href="#" className="group relative block">
                 <img
                   src="https://images.unsplash.com/photo-1624623278313-a930126a11c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                  alt=""
+                  alt="Pengiriman Jalur Udara"
                   className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                 />
 
                 <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
                   <h3 className="text-xl font-medium text-white">
-                    Winter Jumpers
+                    Pengiriman Jalur Udara
                   </h3>
 
                   <span className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
@@ -65,7 +65,7 @@ const ServicePage = () => {
               <a href="#" className="group relative block">
                 <Image
                   src={ship}
-                  alt="ship"
+                  alt="Pengiriman Jalur Laut"
                   width={700}
                   height={800}
                   className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"

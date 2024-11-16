@@ -226,7 +226,7 @@ const Footer = () => {
         </div>
         <div className="flex mt-12 flex-col gap-1">
           <p className=" text-sm text-gray-500">
-            Jl. KH Mansyur No. 25 Kompleks said naum kebon kacang Tanah abang
+            Jl. KH Mas Mansyur No. 25 Kompleks said naum kebon kacang Tanah abang
             Jakarta pusat
           </p>
           <p className="text-sm text-gray-500">
