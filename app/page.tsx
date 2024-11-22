@@ -11,7 +11,7 @@ import Footer from "@/components/footer";
 import warehouse from "./images/warehouse.png";
 import ship from "./images/ship.png";
 import time from "./images/time.png";
-
+import Marquee from "react-fast-marquee";
 import AboutSection from "@/components/HomeComponent/about-section";
 import { PriceList } from "@/components/HomeComponent/price-list";
 import TestimonialSliderCard from "@/components/testimoni";
@@ -191,7 +191,9 @@ export default function Home() {
           </button>
         </ChatWhatsapp>
       </section>
-      <ListCompanies />
+     
+        <ListCompanies />
+      
       <TestimonialSliderCard testimonials={testimonials} />
 
       {/* Footer */}

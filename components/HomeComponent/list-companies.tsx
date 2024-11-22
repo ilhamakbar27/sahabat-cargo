@@ -4,6 +4,7 @@ import Foto2 from "@/app/images/gor.png";
 import Foto3 from "@/app/images/krisbow.png";
 import Foto4 from "@/app/images/kubota.png";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const ListCompanies = () => {
   return (
@@ -13,46 +14,47 @@ const ListCompanies = () => {
           Klien yang sudah percaya kami
         </h3>
         <div className="mt-6">
-          <ul className="flex gap-x-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
+          <ul className="flex gap-x-10 gap-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
             {/* LOGO 1 */}
-            <li>
-              <Image
-                src={Foto}
-                className="size-20"
-                width={600}
-                height={600}
-                alt="Foto"
-              />
-            </li>
-
-            {/* LOGO 2 */}
-            <li>
-              <Image
-                src={Foto2}
-                className="size-32 object-contain"
-                width={600}
-                height={600}
-                alt="Foto"
-              />
-            </li>
-            <li>
-              <Image
-                src={Foto3}
-                className="size-32 object-contain"
-                width={600}
-                height={600}
-                alt="Foto"
-              />
-            </li>
-            <li>
-              <Image
-                src={Foto4}
-                className="size-32 object-contain"
-                width={600}
-                height={600}
-                alt="Foto"
-              />
-            </li>
+            <Marquee speed={100}>
+              <li>
+                <Image
+                  src={Foto}
+                  className="size-20"
+                  width={600}
+                  height={600}
+                  alt="Foto"
+                />
+              </li>
+              {/* LOGO 2 */}
+              <li>
+                <Image
+                  src={Foto2}
+                  className="size-32 object-contain"
+                  width={600}
+                  height={600}
+                  alt="Foto"
+                />
+              </li>
+              <li>
+                <Image
+                  src={Foto3}
+                  className="size-32 object-contain"
+                  width={600}
+                  height={600}
+                  alt="Foto"
+                />
+              </li>
+              <li>
+                <Image
+                  src={Foto4}
+                  className="size-32 object-contain"
+                  width={600}
+                  height={600}
+                  alt="Foto"
+                />
+              </li>
+            </Marquee>
           </ul>
         </div>
       </div>

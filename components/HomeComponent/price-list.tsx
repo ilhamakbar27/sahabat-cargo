@@ -35,6 +35,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { shippingDestinations } from "@/lib/destinations";
+
 // Define Zod schema for form validation
 const FormSchema = z.object({
   from: z.string().nonempty({ message: "Asal harus dipilih." }),
@@ -50,6 +51,9 @@ type FormData = z.infer<typeof FormSchema>;
 
 export function PriceList() {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [filteredDestinations, setFilteredDestinations] = useState<string[]>(
+    []
+  );
   const [shippingDetails, setShippingDetails] = useState<{
     from: string;
     to: string;
@@ -67,8 +71,17 @@ export function PriceList() {
     },
   });
 
+  function handleOriginChange(origin: string) {
+    form.setValue("from", origin); // Update the form value
+    form.setValue("to", ""); // Reset the destination value
+    setFilteredDestinations(
+      shippingDestinations
+        .filter((dest) => dest.from === origin)
+        .map((dest) => dest.to)
+    );
+  }
+
   function onSubmit(data: FormData) {
-    // Find the destination combination
     const destinationData = shippingDestinations.find(
       (dest) => dest.from === data.from && dest.to === data.to
     );
@@ -81,7 +94,6 @@ export function PriceList() {
       return;
     }
 
-    // Ensure weight meets destination's minimum weight requirement
     if (data.weight < destinationData.minWeight) {
       form.setError("weight", {
         type: "manual",
@@ -90,10 +102,8 @@ export function PriceList() {
       return;
     }
 
-    // Calculate the total price
     const totalPrice = destinationData.pricePerKg * data.weight;
 
-    // Set shipping details and open dialog
     setShippingDetails({
       from: destinationData.from,
       to: destinationData.to,
@@ -126,7 +136,8 @@ export function PriceList() {
                     Asal
                   </FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={(value) => handleOriginChange(value)}>
                       <SelectTrigger>
                         <SelectValue placeholder="Pilih asal pengiriman" />
                       </SelectTrigger>
@@ -162,9 +173,7 @@ export function PriceList() {
                         <SelectValue placeholder="Pilih tujuan pengiriman" />
                       </SelectTrigger>
                       <SelectContent>
-                        {Array.from(
-                          new Set(shippingDestinations.map((dest) => dest.to))
-                        ).map((to) => (
+                        {filteredDestinations.map((to) => (
                           <SelectItem key={to} value={to}>
                             {to}
                           </SelectItem>

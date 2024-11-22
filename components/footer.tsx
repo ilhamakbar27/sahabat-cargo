@@ -1,5 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import { Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { FacebookIcon } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -153,81 +159,26 @@ const Footer = () => {
               </ul>
             </div>
 
-            
-
-            <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-700 transition hover:opacity-75">
-                  <span className="sr-only">Facebook</span>
-
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-700 transition hover:opacity-75">
-                  <span className="sr-only">Instagram</span>
-
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 14.787 2 14.447 2 11.73v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C9.935 2.013 10.275 2 12.315 2zm0 1.8c-2.43 0-2.787.011-3.785.057-.915.042-1.41.2-1.744.332-.46.179-.789.394-1.137.742-.348.348-.563.677-.742 1.137-.132.334-.29.829-.332 1.744-.046.998-.057 1.355-.057 3.785s.011 2.787.057 3.785c.042.915.2 1.41.332 1.744.179.46.394.789.742 1.137.348.348.677.563 1.137.742.334.132.829.29 1.744.332.998.046 1.355.057 3.785.057s2.787-.011 3.785-.057c.915-.042 1.41-.2 1.744-.332.46-.179.789-.394 1.137-.742.348-.348.563-.677.742-1.137.132-.334.29-.829.332-1.744.046-.998.057-1.355.057-3.785s-.011-2.787-.057-3.785c-.042-.915-.2-1.41-.332-1.744a3.103 3.103 0 00-.742-1.137 3.103 3.103 0 00-1.137-.742c-.334-.132-.829-.29-1.744-.332-.998-.046-1.355-.057-3.785-.057zm0 5.013a4.501 4.501 0 110 9.002 4.501 4.501 0 010-9.002zm0 1.8a2.701 2.701 0 100 5.402 2.701 2.701 0 000-5.402zm4.703-.532a1.041 1.041 0 11-2.082 0 1.041 1.041 0 012.082 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-700 transition hover:opacity-75">
-                  <span className="sr-only">LinkedIn</span>
-
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <div className="flex pt-3 justify-end col-span-6 gap-4 items-end  text-black font-bold ">
+              <Link
+                className="hover:scale-125 hover:-translate-y-0.5 transition-all duration-300"
+                href={"https://www.instagram.com/pd.cargo/"}>
+                <Instagram size={40} />
+              </Link>
+              <Link
+                className="hover:scale-125 hover:-translate-y-0.5 transition-all duration-300"
+                href={
+                  "https://www.facebook.com/people/Putraduniacargo/61568261789599/?mibextid=LQQJ4d&rdid=kO0r9n9hRTgz5XeY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F12AswCdwR1F%2F%3Fmibextid%3DLQQJ4d"
+                }>
+                <FacebookIcon size={40} />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="flex mt-12 flex-col gap-1">
           <p className=" text-sm text-gray-500">
-            Jl. KH Mas Mansyur No. 25 Kompleks said naum kebon kacang Tanah abang
-            Jakarta pusat
+            Jl. KH Mas Mansyur No. 25 Kompleks said naum kebon kacang Tanah
+            abang Jakarta pusat
           </p>
           <p className="text-sm text-gray-500">
             &copy; 2024 Putra Dunia Cargo. All rights reserved.
