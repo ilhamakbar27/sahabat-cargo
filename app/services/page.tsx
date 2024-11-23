@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React, {} from "react";
 
-import ship from "../images/ship-bg.jpg";
-import Image from "next/image";
 import HeroService from "./components/header-service";
 import ContentService from "./components/content-service";
 

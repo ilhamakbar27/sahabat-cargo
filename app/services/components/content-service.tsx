@@ -1,6 +1,6 @@
 // "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { FaShip } from "react-icons/fa6";
 import { FaShippingFast } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
