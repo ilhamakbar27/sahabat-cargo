@@ -130,7 +130,7 @@ export function PriceList() {
             <FormField
               control={form.control}
               name="from"
-              render={({ field }) => (
+              render={({  }) => (
                 <FormItem>
                   <FormLabel className="flex justify-start items-start">
                     Asal

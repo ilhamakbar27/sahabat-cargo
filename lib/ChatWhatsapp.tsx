@@ -20,7 +20,7 @@ const ChatWhatsapp = ({
 
   useEffect(() => {
     setIsMobileDevice(isMobile);
-  }, []);
+  }, [isMobile]);
 
 
   const baseUrl = isMobileDevice

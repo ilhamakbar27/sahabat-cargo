@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import { Twitter } from "lucide-react";
+
 import { Instagram } from "lucide-react";
-import { Linkedin } from "lucide-react";
+
 import { FacebookIcon } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+
 import Link from "next/link";
 
 const Footer = () => {
@@ -121,51 +121,15 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Support</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    FAQs
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Shipping Guide
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Live Chat Support
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Track Your Shipment
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             <div className="flex pt-3 justify-end col-span-6 gap-4 items-end  text-black font-bold ">
               <Link
+                target="_blank"
                 className="hover:scale-125 hover:-translate-y-0.5 transition-all duration-300"
                 href={"https://www.instagram.com/pd.cargo/"}>
                 <Instagram size={40} />
               </Link>
               <Link
+                target="_blank"
                 className="hover:scale-125 hover:-translate-y-0.5 transition-all duration-300"
                 href={
                   "https://www.facebook.com/people/Putraduniacargo/61568261789599/?mibextid=LQQJ4d&rdid=kO0r9n9hRTgz5XeY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F12AswCdwR1F%2F%3Fmibextid%3DLQQJ4d"
