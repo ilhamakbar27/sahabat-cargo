@@ -1,5 +1,7 @@
 //
 
+import Footer from "@/components/footer";
+
 const layout = ({
   children,
 }: Readonly<{
@@ -7,7 +9,10 @@ const layout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className="">{children}</body>
+      <body className="">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 };
