@@ -80,8 +80,8 @@ const dataService = [
 
 const ContentService = () => {
   return (
-    <div className="mt-10 flex flex-col gap-5 ">
-      <h2 className="max-md:text-xl  text-center tracking-tighter text-4xl">
+    <div className="mt-10 flex flex-col gap-3 ">
+      <h2 className="max-md:text-2xl  text-center tracking-tighter text-4xl">
         Produk dan Layanan
       </h2>
       <div className="grid grid-cols-3 transition-all ease-in animate-in fade-in duration-700  max-md:grid-cols-1 mt-6 md:mx-16 gap-4">

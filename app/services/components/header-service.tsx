@@ -9,20 +9,20 @@ const HeroService = () => {
     <div className="w-full    mx-auto  ">
       <div className=" object-cover relative group ">
         <Image
-          className=" w-full  md:h-[330px] h-[200px] object-cover"
+          className=" w-full  md:h-[330px] h-[250px] object-cover"
           src={ship}
           width={800}
           height={500}
           placeholder="blur"
           alt="Background image"
         />
-        <div className="w-full flex justify-center pt-20 flex-col gap-5 max-md:gap-1 text-white font-semibold text-5xl  md:text-6xl lg:px-20 opacity-100 transition-all duration-300 bg-black/40  absolute h-full top-0 ">
+        <div className="w-full flex justify-center pt-20 flex-col gap-5 max-md:gap-4 text-white font-semibold text-5xl  md:text-6xl lg:px-20 opacity-100 transition-all duration-300 bg-black/40  absolute h-full top-0 ">
           <p
             className="tracking-tighter max-md:text-2xl 
-            text-4xl max-md:px-5 max  font-bold">
+            text-4xl max-md:px-5  font-bold">
             Produk dan layanan
           </p>
-          <h1 className="text-[24px]    transition-all ease-in animate-in fade-in duration-700  font-[700] max-md:px-5     max-md:text-3xl font-200">
+          <h1 className="text-[24px]    transition-all ease-in animate-in fade-in duration-700  font-[700] max-md:px-5     max-md:text-sm font-200">
             Berbagai produk dan layanan kami siap mempermudah Anda dalam
             mengirimkan barang.
           </h1>

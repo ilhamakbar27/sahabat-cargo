@@ -23,17 +23,17 @@ export function Sidebar() {
         <DrawerDescription className="min-h-screen   text-xl font-bold ">
           {/* <p className="mt-28">Ini Menu Sidebar</p> */}
           <div className="flex flex-col mt-24 p-10 text-white gap-3 px-5">
-            <Link href="/#">
+            <Link href="/">
               <DrawerClose>
                 <h2>Beranda</h2>
               </DrawerClose>
             </Link>
-            <Link href="/#services">
+            <Link href="/services">
               <DrawerClose>
                 <h2>Layanan</h2>
               </DrawerClose>
             </Link>
-            <Link href="/#contact">
+            <Link href="/contact">
               <DrawerClose>
                 <h2>Kontak</h2>
               </DrawerClose>
