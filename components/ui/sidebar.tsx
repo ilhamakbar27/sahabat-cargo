@@ -20,19 +20,19 @@ export function Sidebar() {
         <MenuIcon className="size-10" />
       </DrawerTrigger>
       <DrawerContent className="min-h-screen">
-        {MobileMenu.map((item) => (
-          <React.Fragment key={item.id}>
+        <div className="flex flex-col font-semibold p-5 pt-10 gap-3">
+          {MobileMenu.map((item) => (
             <DrawerDescription>
-              <Link href={item.link}>
-                <DrawerClose
-                  key={item.id}
-                  className="text-white px-5 font-bold p-2 text-2xl ">
-                  {item.title}
-                </DrawerClose>
-              </Link>
+              <React.Fragment key={item.id}>
+                <Link href={item.link}>
+                  <DrawerClose key={item.id} className="text-white text-2xl ">
+                    {item.title}
+                  </DrawerClose>
+                </Link>
+              </React.Fragment>
             </DrawerDescription>
-          </React.Fragment>
-        ))}
+          ))}
+        </div>
 
         <DrawerClose asChild>
           <X
