@@ -23,17 +23,18 @@ const Footer = () => {
           />
 
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <div className="col-span-6">
+            <div className="col-span-3 max-md:col-span-6">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   Pengiriman Kargo Terpercaya
                 </h2>
-
-                <p className="mt-4 text-gray-500">
-                  Kami memastikan barang Anda tiba dengan aman dan tepat waktu
-                  ke berbagai tujuan di seluruh dunia. Percayakan logistik Anda
-                  kepada kami.
-                </p>
+                <div className="col-span-1">
+                  <p className="mt-4  text-gray-500">
+                    Kami memastikan barang Anda tiba dengan aman dan tepat waktu
+                    ke berbagai tujuan di seluruh indonesia Percayakan logistik
+                    Anda kepada kami.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -57,8 +58,8 @@ const Footer = () => {
         </div>
         <div className="flex mt-12 flex-col gap-1">
           <p className=" text-sm text-gray-500">
-            Jl. KH Mas Mansyur No. 25 Kompleks said naum kebon kacang Tanah
-            abang Jakarta pusat
+            Jl. KH Mas Mansyur No. 25 Kompleks Said Naum Kebon Kacang Tanah
+            Abang Jakarta pusat
           </p>
           <p className="text-sm text-gray-500">
             &copy; 2024 Putra Dunia Cargo. All rights reserved.

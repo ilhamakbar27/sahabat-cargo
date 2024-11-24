@@ -22,16 +22,16 @@ const dataService = [
     icon: <FaShippingFast />,
     coverage: "Seluruh Indonesia",
   },
-  {
-    id: 2,
-    serviceName: "Jasa Cargo Udara",
-    description:
-      "Jasa pengiriman barang yang cepat dengan menggunakan jalur udara yang menjangkau seluruh Indonesia dengan berbiaya murah.",
-    category: "Cargo",
-    transportationMode: "Udara",
-    icon: <BsAirplaneFill />,
-    priceRange: "Murah",
-  },
+  // {
+  //   id: 2,
+  //   serviceName: "Jasa Cargo Udara",
+  //   description:
+  //     "Jasa pengiriman barang yang cepat dengan menggunakan jalur udara yang menjangkau seluruh Indonesia dengan berbiaya murah.",
+  //   category: "Cargo",
+  //   transportationMode: "Udara",
+  //   icon: <BsAirplaneFill />,
+  //   priceRange: "Murah",
+  // },
   {
     id: 1,
     serviceName: "Jasa Cargo Laut",
