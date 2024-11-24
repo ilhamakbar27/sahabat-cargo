@@ -7,14 +7,7 @@ const layout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return (
-    <html lang="en">
-      <body className="">
-        <div>{children}</div>
-        {/* <Footer /> */}
-      </body>
-    </html>
-  );
+  return <div>{children}</div>;
 };
 
 export default layout;

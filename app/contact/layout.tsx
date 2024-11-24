@@ -1,15 +1,9 @@
-
-
 const layout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return (
-    <html lang="en">
-      <body className="">{children}</body>
-    </html>
-  );
+  return <div>{children}</div>;
 };
 
 export default layout;

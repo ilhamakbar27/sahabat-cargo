@@ -2,10 +2,13 @@
 
 // import Footer from "@/components/footer";
 import ContactForm from "@/components/form/ContactForm";
+import Navbar from "@/components/navbar";
 import React from "react";
 
 const Contact = () => {
   return (
+    <>
+    <Navbar/>
     <main className="flex overflow-hidden">
       <div className="flex-1 hidden lg:block">
         <img
@@ -29,6 +32,7 @@ const Contact = () => {
         {/* <Footer /> */}
       </div>
     </main>
+    </>
   );
 };
 
