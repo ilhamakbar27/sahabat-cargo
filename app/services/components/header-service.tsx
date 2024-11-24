@@ -6,7 +6,7 @@ import ship from "../../images/ship-bg.jpg";
 
 const HeroService = () => {
   return (
-    <div className="w-full    mx-auto  ">
+    <div className="w-full  mx-auto  ">
       <div className=" object-cover relative group ">
         <Image
           className=" w-full  md:h-[330px] h-[250px] object-cover"

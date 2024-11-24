@@ -1,5 +1,6 @@
 "use client";
 
+// import Footer from "@/components/footer";
 import ContactForm from "@/components/form/ContactForm";
 import React from "react";
 
@@ -25,6 +26,7 @@ const Contact = () => {
           </div>
           <ContactForm />
         </div>
+        {/* <Footer /> */}
       </div>
     </main>
   );
