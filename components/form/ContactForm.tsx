@@ -1,4 +1,5 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { z } from "zod";
@@ -68,15 +69,21 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
           control={form.control}
           placeholder={"eg. Saya ingin berkonsultasi tentang cargo "}
         />
-        <FormError message={error} />
-        <FormSuccess message={success} />
-        <Button
-          type="submit"
-          disabled={isPending}
-          className="w-full mt-5 "
-          size={"lg"}>
-          Kirim pesan
-        </Button>
+        <div className="flex flex-col gap-2">
+          <div className="mt-1">
+            <FormError message={error} />
+            <FormSuccess message={success} />
+          </div>
+          <div>
+            <Button
+              type="submit"
+              disabled={isPending}
+              size={"lg"}
+              className="mt-5 ">
+              Kirim pesan
+            </Button>
+          </div>
+        </div>
       </form>
     </Form>
   );
