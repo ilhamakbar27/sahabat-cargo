@@ -1,6 +1,6 @@
 //
 
-import Footer from "@/components/footer";
+// import Footer from "@/components/footer";
 
 const layout = ({
   children,
@@ -10,8 +10,8 @@ const layout = ({
   return (
     <html lang="en">
       <body className="">
-        {children}
-        <Footer />
+        <div>{children}</div>
+        {/* <Footer /> */}
       </body>
     </html>
   );

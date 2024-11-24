@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react";
 import { MenuIcon } from "lucide-react";
 import {
@@ -30,12 +32,12 @@ export function Sidebar() {
             </Link>
             <Link href="/services">
               <DrawerClose>
-                <h2>Layanan</h2>
+               Layanan
               </DrawerClose>
             </Link>
             <Link href="/contact">
               <DrawerClose>
-                <h2>Kontak</h2>
+                Kontak
               </DrawerClose>
             </Link>
           </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import { FaShip } from "react-icons/fa6";
 import { FaShippingFast } from "react-icons/fa";
-import { BsAirplaneFill } from "react-icons/bs";
+// import { BsAirplaneFill } from "react-icons/bs";
 import { MdLocalShipping } from "react-icons/md";
 import { PiShippingContainerBold } from "react-icons/pi";
 import { PiTruckTrailerFill } from "react-icons/pi";
