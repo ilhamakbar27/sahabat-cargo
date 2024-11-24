@@ -22,8 +22,8 @@ export function Sidebar() {
       <DrawerContent className="min-h-screen">
         <div className="flex flex-col font-semibold p-5 pt-10 gap-3">
           {MobileMenu.map((item) => (
-            <DrawerDescription>
-              <React.Fragment key={item.id}>
+            <DrawerDescription key={item.id}>
+              <React.Fragment >
                 <Link href={item.link}>
                   <DrawerClose key={item.id} className="text-white text-2xl ">
                     {item.title}
