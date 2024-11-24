@@ -7,7 +7,6 @@ import { MdLocalShipping } from "react-icons/md";
 import { PiShippingContainerBold } from "react-icons/pi";
 import { PiTruckTrailerFill } from "react-icons/pi";
 
-
 const dataService = [
   {
     id: 3,
@@ -20,7 +19,7 @@ const dataService = [
     icon: <FaShippingFast />,
     coverage: "Seluruh Indonesia",
   },
- 
+
   {
     id: 1,
     serviceName: "Jasa Cargo Laut",
