@@ -23,7 +23,7 @@ const Footer = () => {
           />
 
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <div className="col-span-2">
+            <div className="col-span-6">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   Pengiriman Kargo Terpercaya
@@ -35,90 +35,6 @@ const Footer = () => {
                   kepada kami.
                 </p>
               </div>
-            </div>
-
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Services</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    International Shipping
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Freight Forwarding
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Warehousing
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Customs Clearance
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Cargo Insurance
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Company</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    About Us
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Careers
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Partners
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75">
-                    Contact
-                  </a>
-                </li>
-              </ul>
             </div>
 
             <div className="flex pt-3 justify-end col-span-6 gap-4 items-end  text-black font-bold ">
