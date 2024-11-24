@@ -26,7 +26,7 @@ export default function TestimonialSliderCard({
   return (
     <section className="w-full  py-16">
       <div className="mx-auto lg:max-w-6xl px-3">
-        <h2 className="sm:text-4xl pb-10 text-xl">
+        <h2 className="sm:text-4xl pb-10 text-center text-2xl">
           Testimoni dari pelanggan kami
         </h2>
         <Carousel>

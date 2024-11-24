@@ -2,40 +2,21 @@
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { z } from "zod";
-import { FC, ReactNode, useState } from "react";
+import { FC, useState, useTransition } from "react";
 import { ContactFormValidation } from "@/app/contact/lib/ContactValidation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import FormField from "../form-field";
+import { FormError } from "./form-error";
+import { FormSuccess } from "./form-success";
+import { inquiry } from "@/app/action/inquiry";
 
 interface ContactFormProps {}
 
-const SubmitBtn = ({ isLoading }: { isLoading: boolean }): ReactNode => {
-  switch (isLoading) {
-    case true:
-      return (
-        <Button
-          disabled
-          variant={"default"}
-          className="h-10 text-base font-medium min-w-40">
-          loading...
-        </Button>
-      );
-
-    default:
-      return (
-        <Button
-          variant={"default"}
-          className="h-10 text-base font-[600] min-w-40"
-          type="submit">
-          Kirim Pesan
-        </Button>
-      );
-  }
-};
-
 const ContactForm: FC<ContactFormProps> = ({}) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
+  const [isPending, startTransition] = useTransition();
   const form = useForm<z.infer<typeof ContactFormValidation>>({
     resolver: zodResolver(ContactFormValidation),
     defaultValues: {
@@ -46,17 +27,17 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
     },
   });
 
-  async function onSubmit() {
-    setIsLoading(true);
-    try {
-    //   const data = {
-    //     ...values,
-    //   };
-    } catch (error) {
-      console.log(error);
-    }
-    setIsLoading(false);
-  }
+  const onSubmit = (values: z.infer<typeof ContactFormValidation>) => {
+    setError("");
+    setSuccess("");
+    startTransition(() => {
+      inquiry(values).then((data) => {
+        setError(data.error);
+        setSuccess(data.success);
+      });
+    });
+  };
+
   return (
     <Form {...form}>
       <form
@@ -80,12 +61,6 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
           control={form.control}
           placeholder={"eg. 081234567890"}
         />
-        {/* <FormField
-          fieldID={"service"}
-          name={"Layanan"}
-          control={form.control}
-          placeholder={"eg. Konsultasi"}
-        /> */}
         <FormField
           fieldID={"message"}
           name={"Pesan"}
@@ -93,9 +68,15 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
           control={form.control}
           placeholder={"eg. Saya ingin berkonsultasi tentang cargo "}
         />
-        <div className="flex justify-end col-span-2 mt-4 my-3">
-          <SubmitBtn isLoading={isLoading} />
-        </div>
+        <FormError message={error} />
+        <FormSuccess message={success} />
+        <Button
+          type="submit"
+          disabled={isPending}
+          className="w-full mt-5 "
+          size={"lg"}>
+          Kirim pesan
+        </Button>
       </form>
     </Form>
   );

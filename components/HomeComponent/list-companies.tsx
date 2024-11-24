@@ -15,7 +15,6 @@ const ListCompanies = () => {
         </h3>
         <div className="mt-6">
           <ul className="flex gap-x-10 gap-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
-            {/* LOGO 1 */}
             <Marquee speed={100}>
               <li>
                 <Image
