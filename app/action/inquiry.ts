@@ -17,7 +17,7 @@ export const inquiry = async (
   const { name, email, phone, message } = validatedSchema.data;
 
   try {
-    const response = await fetch("http://localhost:3000/api/send", {
+    const response = await fetch("https://www.putraduniacargo.com/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
