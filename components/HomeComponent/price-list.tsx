@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-// ShippingIllustration
-import { PhoneIcon as WhatsappIcon } from "lucide-react";
+
+// import { PhoneIcon as WhatsappIcon } from "lucide-react";
+import { MapPin, Package, Truck, Calendar, X } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -39,9 +40,10 @@ import {
 import { shippingDestinations } from "@/lib/destinations";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2 } from "lucide-react"; // Assuming Loader2 component is defined elsewhere
-import { MapPinIcon, PackageIcon, TruckIcon, CalendarIcon } from "lucide-react"; //
+// import { MapPinIcon, PackageIcon, TruckIcon, CalendarIcon } from "lucide-react"; //
 // import { ShippingIllustration } from "./shipping-illustration";
 import ChatWhatsapp from "@/lib/ChatWhatsapp";
+// import Image from "next/image";
 
 // Define the FormSchema using zod
 const FormSchema = z.object({
@@ -127,7 +129,7 @@ export function PriceList() {
 
   return (
     <Card className="w-[450px] max-md:w-[370px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <CardHeader className=" bg-[#0c2d5f]  text-white rounded-t-lg">
+      <CardHeader className=" bg-[#164C9D]   text-white rounded-t-lg">
         <CardTitle className="text-2xl font-bold">
           Cek Harga Pengiriman
         </CardTitle>
@@ -150,7 +152,7 @@ export function PriceList() {
                     onValueChange={(value) => handleOriginChange(value)}
                     {...field}>
                     <FormControl>
-                      <SelectTrigger className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                      <SelectTrigger className="bg-gray-50 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full ">
                         <SelectValue placeholder="Pilih asal pengiriman" />
                       </SelectTrigger>
                     </FormControl>
@@ -178,7 +180,7 @@ export function PriceList() {
                   </FormLabel>
                   <Select onValueChange={field.onChange} {...field}>
                     <FormControl>
-                      <SelectTrigger className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                      <SelectTrigger className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
                         <SelectValue placeholder="Pilih tujuan pengiriman" />
                       </SelectTrigger>
                     </FormControl>
@@ -237,94 +239,103 @@ export function PriceList() {
       <AnimatePresence>
         {dialogOpen && (
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogContent className="bg-white rounded-lg shadow-xl max-w-md mx-auto">
+            <DialogContent className="sm:max-w-[460px] bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-2xl">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-gray-900">
+                <DialogTitle className="text-3xl font-bold text-blue-900 mb-2">
                   Detail Pengiriman
                 </DialogTitle>
-                <DialogDescription className="text-gray-600">
-                  Berikut adalah rincian biaya pengiriman Anda:
+                <DialogDescription className="text-blue-700 text-lg">
+                  Rincian biaya pengiriman Anda:
                 </DialogDescription>
               </DialogHeader>
-              {shippingDetails && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-4">
-                  <div className="flex items-center justify-between py-2 border-b">
-                    <span className="flex items-center text-gray-600">
-                      <MapPinIcon className="mr-2 h-5 w-5" /> Asal
-                    </span>
-                    <span className="font-semibold text-gray-900">
-                      {shippingDetails.from}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between py-2 border-b">
-                    <span className="flex items-center text-gray-600">
-                      <MapPinIcon className="mr-2 h-5 w-5" /> Tujuan
-                    </span>
-                    <span className="font-semibold text-gray-900">
-                      {shippingDetails.to}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between py-2 border-b">
-                    <span className="flex items-center text-gray-600">
-                      <PackageIcon className="mr-2 h-5 w-5" /> Berat
-                    </span>
-                    <span className="font-semibold text-gray-900">
-                      {shippingDetails.weight} kg
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between py-2 border-b">
-                    <span className="flex items-center text-gray-600">
-                      <TruckIcon className="mr-2 h-5 w-5" /> Total Harga
-                    </span>
-                    <span className="font-semibold text-xl text-blue-600">
-                      Rp {shippingDetails.totalPrice.toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between py-2">
-                    <span className="flex items-center text-gray-600">
-                      <CalendarIcon className="mr-2 h-5 w-5" /> Estimasi Waktu
-                    </span>
-                    <span className="font-semibold text-gray-900">
-                      {shippingDetails.deliveryEstimate}
-                    </span>
-                  </div>
-                </motion.div>
-              )}
-              <DialogFooter className="mt-6 flex justify-between">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-3">
+                <DetailItem
+                  icon={MapPin}
+                  label="Asal"
+                  value={shippingDetails?.from || ""}
+                />
+                <DetailItem
+                  icon={MapPin}
+                  label="Tujuan"
+                  value={shippingDetails?.to || ""}
+                />
+                <DetailItem
+                  icon={Package}
+                  label="Berat"
+                  value={`${shippingDetails?.weight || ""} kg`}
+                />
+                <DetailItem
+                  icon={Truck}
+                  label="Total Harga"
+                  value={`Rp ${shippingDetails?.totalPrice?.toLocaleString()}`}
+                  highlight
+                />
+                <DetailItem
+                  icon={Calendar}
+                  label="Estimasi Waktu"
+                  value={shippingDetails?.deliveryEstimate || ""}
+                />
+              </motion.div>
+              <DialogFooter className="mt-8">
                 <Button
-                  type="button"
                   onClick={() => setDialogOpen(false)}
-                  variant="default"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
+                  variant="outline"
+                  className="w-full bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-4 rounded-full border-2 border-blue-600 transition-colors duration-200">
+                  <X className="w-5 h-5 mr-2" />
                   Tutup
                 </Button>
-                <ChatWhatsapp
-                  phone="+6281313130765"
-                  message={`Halo, saya tertarik untuk memesan layanan kargo. Berikut adalah detail pengiriman saya:\n
-                  🚩 Rute: ${shippingDetails?.from} ke ${shippingDetails?.to}\n
-                  📦 Berat: ${shippingDetails?.weight} kg\n
-                  💵 Estimasi Biaya: Rp ${shippingDetails?.totalPrice}\n
-                  ⏳ Perkiraan Waktu Pengiriman: ${shippingDetails?.deliveryEstimate}`}>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center py-2 border border-transparent text-lg font-medium rounded-full text-blue-900 bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors duration-300">
-                    <WhatsappIcon className="w-6 h-6 mr-2" />
-                    <span className="font-extrabold tracking-wide">
-                      Pesan Sekarang
-                    </span>
-                  </motion.button>
-                </ChatWhatsapp>
+                <Button className=" bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition-colors duration-200">
+                  <ChatWhatsapp
+                    phone="+6281313130765"
+                    message={`Halo, saya tertarik untuk memesan layanan kargo. Berikut adalah detail pengiriman saya:
+              🚩 Rute: ${shippingDetails?.from} ke ${shippingDetails?.to}
+              📦 Berat: ${shippingDetails?.weight} kg
+              💵 Estimasi Biaya: Rp ${shippingDetails?.totalPrice.toLocaleString()}
+              ⏳ Perkiraan Waktu Pengiriman: ${
+                shippingDetails?.deliveryEstimate
+              }`}>
+                    Pesan Sekarang via WhatsApp
+                  </ChatWhatsapp>
+                </Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
         )}
       </AnimatePresence>
     </Card>
+  );
+}
+
+interface DetailItemProps {
+  icon: React.ElementType;
+  label: string;
+  value: string;
+  highlight?: boolean;
+}
+
+function DetailItem({
+  icon: Icon,
+  label,
+  value,
+  highlight = false,
+}: DetailItemProps) {
+  return (
+    <div className="flex items-center justify-between py-3 border-b border-blue-100">
+      <span className="flex items-center text-blue-800">
+        <Icon className="mr-3 h-6 w-6 text-blue-500" />
+        {label}
+      </span>
+      <span
+        className={`font-semibold ${
+          highlight ? "text-2xl text-green-600" : "text-blue-900"
+        }`}>
+        {value}
+      </span>
+    </div>
   );
 }

@@ -22,7 +22,6 @@ const ChatWhatsapp = ({
     setIsMobileDevice(isMobile);
   }, [isMobile]);
 
-
   const baseUrl = isMobileDevice
     ? "https://api.whatsapp.com/send"
     : "https://web.whatsapp.com/send";
