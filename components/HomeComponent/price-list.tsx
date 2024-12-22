@@ -239,9 +239,9 @@ export function PriceList() {
       <AnimatePresence>
         {dialogOpen && (
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogContent className="sm:max-w-[460px] bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-2xl">
+            <DialogContent className="md:max-w-[460px] max-w-[330px] bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-2xl">
               <DialogHeader>
-                <DialogTitle className="text-3xl font-bold text-blue-900 mb-2">
+                <DialogTitle className="text-3xl max-md:text-2xl font-bold text-blue-900 mb-2">
                   Detail Pengiriman
                 </DialogTitle>
                 <DialogDescription className="text-blue-700 text-lg">
@@ -253,7 +253,7 @@ export function PriceList() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="space-y-3">
+                className="space-y-2">
                 <DetailItem
                   icon={MapPin}
                   label="Asal"
@@ -332,7 +332,7 @@ function DetailItem({
       </span>
       <span
         className={`font-semibold ${
-          highlight ? "text-2xl text-green-600" : "text-blue-900"
+          highlight ? "text-2xl max-md:text-xl text-green-600" : "text-blue-900"
         }`}>
         {value}
       </span>
