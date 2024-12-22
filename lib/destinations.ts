@@ -558,5 +558,37 @@ export const shippingDestinations: ShippingDestination[] = [
     minWeight: 100,
     deliveryEstimate: "8 hari",
   },
+  {
+    id: "70",
+    from: "Jakarta",
+    to: "Banjarmasin",
+    pricePerKg: 5000,
+    minWeight: 100,
+    deliveryEstimate: "6 hari",
+  },
+  {
+    id: "71",
+    from: "Jakarta",
+    to: "Nabire",
+    pricePerKg: 13000,
+    minWeight: 100,
+    deliveryEstimate: "14 hari",
+  },
+  {
+    id: "72",
+    from: "Makassar",
+    to: "Bandung",
+    pricePerKg: 9000,
+    minWeight: 100,
+    deliveryEstimate: "8 hari",
+  },
+  {
+    id: "73",
+    from: "Makassar",
+    to: "Dobo",
+    pricePerKg: 12000,
+    minWeight: 100,
+    deliveryEstimate: "8 hari",
+  },
   // Add the rest of the destinations
 ];

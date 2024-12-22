@@ -65,7 +65,7 @@ const ListCompanies: React.FC = () => {
             Siap untuk bergabung dengan mereka? Percayakan logistik Anda kepada kami.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 hover:bg-blue-700 hover:shadow-lg"
           >
             Hubungi Kami Sekarang

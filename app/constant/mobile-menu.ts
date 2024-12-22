@@ -20,6 +20,11 @@ export const MobileMenu: MobileMenuProps[] = [
   },
   {
     id: "3",
+    title: "Tentang Kami",
+    link: "/about-us",
+  },
+  {
+    id: "4",
     title: "Kontak",
     link: "/contact",
   },

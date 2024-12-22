@@ -145,7 +145,7 @@ export function PriceList() {
               name="from"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">
+                  <FormLabel className="text-sm text-start font-medium text-gray-700">
                     Asal
                   </FormLabel>
                   <Select
@@ -281,11 +281,11 @@ export function PriceList() {
                   value={shippingDetails?.deliveryEstimate || ""}
                 />
               </motion.div>
-              <DialogFooter className="mt-8">
+              <DialogFooter className="mt-8 max-md:flex  max-md:flex-col-reverse max-md:gap-5">
                 <Button
                   onClick={() => setDialogOpen(false)}
                   variant="outline"
-                  className="w-full bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-4 rounded-full border-2 border-blue-600 transition-colors duration-200">
+                  className="w-full bg-white hover:bg-gray-100 max-md:hidden text-blue-600 font-semibold py-3 px-4 rounded-full border-2 border-blue-600 transition-colors duration-200">
                   <X className="w-5 h-5 mr-2" />
                   Tutup
                 </Button>
