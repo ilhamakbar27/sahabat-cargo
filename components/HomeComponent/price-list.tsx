@@ -128,8 +128,8 @@ export function PriceList() {
   }
 
   return (
-    <Card className="w-[450px] max-md:w-[370px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <CardHeader className=" bg-[#164C9D]   text-white rounded-t-lg">
+    <Card className="w-[420px] max-md:w-[370px] hover:shadow-xl  duration-300">
+      <CardHeader className=" bg-[#164C9D]  text-white rounded-t-lg">
         <CardTitle className="text-2xl font-bold">
           Cek Harga Pengiriman
         </CardTitle>
@@ -139,13 +139,13 @@ export function PriceList() {
       </CardHeader>
       <CardContent className="mt-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
               name="from"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm text-start font-medium text-gray-700">
+                  <FormLabel className="text-sm text-start font-semibold text-gray-700">
                     Asal
                   </FormLabel>
                   <Select
@@ -175,7 +175,7 @@ export function PriceList() {
               name="to"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">
+                  <FormLabel className="text-sm font-semibold text-gray-700">
                     Tujuan
                   </FormLabel>
                   <Select onValueChange={field.onChange} {...field}>
@@ -201,7 +201,7 @@ export function PriceList() {
               name="weight"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium text-gray-700">
+                  <FormLabel className="text-sm font-semibold text-gray-700">
                     Berat (kg)
                   </FormLabel>
                   <FormControl>
@@ -241,7 +241,7 @@ export function PriceList() {
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogContent className="md:max-w-[460px] max-w-[330px] bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-2xl">
               <DialogHeader>
-                <DialogTitle className="text-3xl max-md:text-2xl font-bold text-blue-900 mb-2">
+                <DialogTitle className="text-2xl max-md:text-xl font-bold text-blue-900 ">
                   Detail Pengiriman
                 </DialogTitle>
                 <DialogDescription className="text-blue-700 text-lg">
@@ -332,7 +332,7 @@ function DetailItem({
       </span>
       <span
         className={`font-semibold ${
-          highlight ? "text-2xl max-md:text-xl text-green-600" : "text-blue-900"
+          highlight ? "text-xl max-md:text-lg text-green-600" : "text-blue-900"
         }`}>
         {value}
       </span>
