@@ -244,7 +244,7 @@ export function PriceList() {
                 <DialogTitle className="text-2xl max-md:text-xl font-bold text-blue-900 ">
                   Detail Pengiriman
                 </DialogTitle>
-                <DialogDescription className="text-blue-700 text-lg">
+                <DialogDescription className="text-blue-700 font-[300] text-lg">
                   Rincian biaya pengiriman Anda:
                 </DialogDescription>
               </DialogHeader>
