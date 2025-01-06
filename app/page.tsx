@@ -82,7 +82,7 @@ export default function Home() {
                 barang tanpa harus ribet dan mahal
               </h2>
               <ChatWhatsapp
-                phone="+6281313130765"
+                          phone="+6285121033818"
                 message="Hi, Saya Tertarik untuk memesan cargo disini 👋🏻">
                 <button
                   data-aos="fade-down"

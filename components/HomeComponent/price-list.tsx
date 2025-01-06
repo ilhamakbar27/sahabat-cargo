@@ -291,7 +291,7 @@ export function PriceList() {
                 </Button>
                 <Button className=" bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition-colors duration-200">
                   <ChatWhatsapp
-                    phone="+6281313130765"
+                    phone="+6285121033818"
                     message={`Halo, saya tertarik untuk memesan layanan kargo. Berikut adalah detail pengiriman saya:
               🚩 Rute: ${shippingDetails?.from} ke ${shippingDetails?.to}
               📦 Berat: ${shippingDetails?.weight} kg
